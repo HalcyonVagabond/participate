@@ -1,0 +1,35 @@
+@import "../Participate.css";
+
+
+.navContainer {
+    background-color: var(--niceBlue);
+}
+
+#logo {
+    width: 280px;
+    margin-bottom: 8px;
+}
+
+.navDropDownContainer {
+    border-radius: 3px;
+    padding-left: 12px;
+}
+
+@media (min-width: 768px) {
+   
+    .navLinksContainer {
+        margin-left: 50%;
+    }
+    .navLink{
+        text-align: center !important;
+    }
+
+}
+
+.navLink{
+    padding-left: 5% !important;
+}
+.navLink:hover{
+    color: var(--isabelline) !important;
+    background-color: var(--seaBlue) !important;
+}
