@@ -9,14 +9,14 @@ const CouncilMembersList = () => {
 
     const getCouncilMembers = () => {
         return nashvilleAPImodule.getEmployees.getCouncilMembers().then(councilMemberArray => {
-            console.log(councilMemberArray)
+            console.log('rendering')
             setCouncilMembers(councilMemberArray);
         });
     };
 
     useEffect(() => {
         getCouncilMembers();
-    });
+    }, []);
 
     return (
         <Table hover>
