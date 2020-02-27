@@ -1,0 +1,21 @@
+
+svg {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+#mapContainer {
+    margin-left: 7%;
+    margin-top: 8%;
+    height: 100%;
+}
+
+.state {
+    fill:var(--royalishBlue);
+}
+
+#AK:hover,#AL:hover,#AZ:hover,#AR:hover,#CA:hover,#CO:hover,#CT:hover,#DE:hover,#FL:hover,#GA:hover,#HI:hover,#ID:hover,#IL:hover,#IN:hover,#IA:hover,#KS:hover,#KY:hover,#LA:hover,#ME:hover,#MD:hover,#MA:hover,#MI:hover,#MN:hover,#MS:hover,#MO:hover,#MT:hover,#NE:hover,#NV:hover,#NH:hover,#NJ:hover,#NM:hover,#NY:hover,#NC:hover,#ND:hover,#OH:hover,#OK:hover,#OR:hover,#PA:hover,#RI:hover,#SC:hover,#SD:hover,#TN:hover,#TX:hover,#UT:hover,#VT:hover,#VA:hover,#WA:hover,#WV:hover,#WI:hover,#WY:hover,#AS:hover,#GU:hover, #MP:hover,#PR:hover, 
+#VI:hover {
+    cursor: pointer;
+    fill: var(--bondiBlue) !important; 
+}
