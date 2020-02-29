@@ -33,7 +33,7 @@ const CouncilMembersList = () => {
                 </tr>
             </thead>
             <tbody>
-                {councilMembers.map(councilMember => <CouncilMemberCard key={councilMember.id} councilMember={councilMember} />)}
+                {councilMembers.map((councilMember, i) => <CouncilMemberCard key={i} councilMember={councilMember} onClick={console.log(i)}/>)}
             </tbody>
         </Table>
     );

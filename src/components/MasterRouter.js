@@ -2,11 +2,12 @@ import React from "react"
 import { Route } from "react-router-dom"
 import MapPlaceholder from "./maps/MapPlaceholder"
 import NashvilleMain from "./governments/states/tennessee/cities/Nashville/NashvilleMain";
-import US_mapWithTerritories from "./maps/US_mapWithTerritoriesCard"
 import TN_mapWithCounties from "./maps/StateMaps/TennesseeMap/TN_mapWithCounties"
+import HomePage from "./home/HomePage"
+import TN_FourCities from "./maps/StateMaps/TennesseeMap/TN_FourCities"
 
 
-const ApplicationViews = () => {
+const MasterRouter = () => {
 
     return (
         <React.Fragment>
@@ -15,7 +16,7 @@ const ApplicationViews = () => {
             path="/"
             render={props => {
              return (
-             <US_mapWithTerritories />
+             <HomePage />
              );
             }}
         />
@@ -28,12 +29,12 @@ const ApplicationViews = () => {
                 exact
                 path="/nashville"
                 render={props => {
-                    return <NashvilleMain />
+                    return <TN_FourCities />
                 }}
             />
             <Route
                 exact
-                path="/tn"
+                path="/tennessee"
                 render={props => {
                     return <TN_mapWithCounties />
                 }}
@@ -42,5 +43,5 @@ const ApplicationViews = () => {
     );
 };
 
-export default ApplicationViews;
+export default MasterRouter;
 
