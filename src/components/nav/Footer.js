@@ -21,37 +21,40 @@ const Footer = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div class="footerContainer" id="mainFooter">
+    <div className="footerContainer" id="mainFooter">
       <Navbar className="footer" light expand="md">
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
+        <NavbarBrand href="/">participate</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink href="/components/">Components</NavLink>
-            </NavItem>
+          <Nav className="mr-auto footerLinks" navbar>
             <NavItem>
               <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar>
+            <NavItem>
+              <NavLink href="/components/">Contact</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/components/"></NavLink>
+            </NavItem>
+            <UncontrolledDropdown direction="up" nav inNavbar>
               <DropdownToggle nav caret>
-                Options
+                Donate
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>
-                  Option 1
+                  Patreon
                 </DropdownItem>
                 <DropdownItem>
-                  Option 2
+                  Venmo
                 </DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem>
-                  Reset
+                  Ways to Donate
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
-          <NavbarText>Simple Text</NavbarText>
+          <NavbarText>😊</NavbarText>
         </Collapse>
       </Navbar>
     </div>

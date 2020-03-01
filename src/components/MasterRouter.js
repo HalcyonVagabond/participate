@@ -27,16 +27,16 @@ const MasterRouter = () => {
                 }} />
             <Route
                 exact
-                path="/nashville"
+                path="/tennessee"
                 render={props => {
                     return <TN_FourCities />
                 }}
             />
             <Route
                 exact
-                path="/tennessee"
+                path="/nashville"
                 render={props => {
-                    return <TN_mapWithCounties />
+                    return <NashvilleMain />
                 }}
             />
         </React.Fragment>

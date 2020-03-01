@@ -8,50 +8,70 @@ import {
   NavItem,
   NavLink,
   UncontrolledDropdown,
+  Dropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  NavbarText
+  NavbarText,
+  Button
 } from 'reactstrap';
 import "./US_FullMap.css"
 
 const US_MapToolbar = (props) => {
+  // For collapsed navbar
   const [isOpen, setIsOpen] = useState(false);
-
   const toggle = () => setIsOpen(!isOpen);
+// for dropdown state menu
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const toggle2 = () => setDropdownOpen(prevState => !prevState);
 
   return (
-    <div class="mapToolbar" id="countryMapToolbar">
+    <div className="mapToolbar" id="countryMapToolbar">
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
+        <NavbarBrand href="/">Governments</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/components/">Components</NavLink>
+              <NavLink href="/components/">City</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+              <NavLink href="/components/">County</NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar>
+            <NavItem>
+              <NavLink href="/components/">State</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/components/">Federal</NavLink>
+            </NavItem>
+            
+          </Nav>
+          <Nav className="mr-auto" navbar>
+          <Dropdown isOpen={dropdownOpen} toggle={toggle2} nav inNavbar>
               <DropdownToggle nav caret>
-                Options
+                Select State
               </DropdownToggle>
-              <DropdownMenu right>
+              <DropdownMenu right className="dropDownContainer">
                 <DropdownItem>
-                  Option 1
+                  Tennessee
                 </DropdownItem>
                 <DropdownItem>
-                  Option 2
+                  Kentucky
+                </DropdownItem>
+                <DropdownItem>
+                  New York
+                </DropdownItem>
+                <DropdownItem>
+                  California
                 </DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem>
                   Reset
                 </DropdownItem>
               </DropdownMenu>
-            </UncontrolledDropdown>
+            </Dropdown>
+          <Button>Search</Button>
           </Nav>
-          <NavbarText>Simple Text</NavbarText>
         </Collapse>
       </Navbar>
     </div>

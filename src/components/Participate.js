@@ -11,7 +11,7 @@ const Participate = () => {
   return (
     <>
       <NavBar />
-      <div id="MasterRouter">
+      <div id="bodyWrapper">
         <MasterRouter />
         <Footer />
       </div>

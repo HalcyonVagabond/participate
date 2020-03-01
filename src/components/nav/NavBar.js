@@ -29,16 +29,16 @@ const NavBar = (props) => {
           <Nav className="mr-auto navLinksContainer" navbar>
           {/* <NavbarText>Government:  </NavbarText> */}
             <NavItem>
-              <NavLink className="navLink" href="/cities">City</NavLink>
+              <NavLink className="navLink" href="/">Governments</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="navLink" href="/counties">County</NavLink>
+              <NavLink className="navLink" href="/elections">Elections</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="navLink" href="/states">State</NavLink>
+              <NavLink className="navLink" href="/states">Learn</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="navLink" href="/federal">Federal</NavLink>
+              <NavLink className="navLink" href="/federal">About</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
