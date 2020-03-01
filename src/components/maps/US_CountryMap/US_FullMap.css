@@ -2,10 +2,24 @@
     position: relative !important;
 }
 
+.fullMapContainer {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 6%;
+    padding-right: 6%;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+}
+
 .mapToolbar{
     position: absolute;
     width: 90%;
     top: 5px;
+}
+
+.dropDownContainer {
+    max-height: 200px !important;
+    overflow: auto;
 }
 
 .actualMap {
@@ -18,8 +32,11 @@
     fill: var(--royalishBlue)
 }
 
-.state path:hover{
+.disabledState:hover{
     cursor: pointer;
+    fill: var(--red) !important;
+}
+.activeState:hover {
     fill: var(--bondiBlue) !important;
 }
 

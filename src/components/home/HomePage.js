@@ -6,7 +6,7 @@ import "./HomePage.css"
 const HomePage = () => {
 
     return (
-        <section class="mapContainer" id="homeContainer">
+        <section className="mapContainer" id="homeContainer">
             <US_FullMap/>
         </section>
     )
