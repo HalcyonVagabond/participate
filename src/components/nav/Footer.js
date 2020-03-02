@@ -28,13 +28,10 @@ const Footer = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto footerLinks" navbar>
             <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+              <NavLink target="_blank" href="https://github.com/HalcyonVagabond/participate">GitHub</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/components/">Contact</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/components/"></NavLink>
+              <NavLink target="_blank" href="https://github.com/HalcyonVagabond/participate">Contact</NavLink>
             </NavItem>
             <UncontrolledDropdown direction="up" nav inNavbar>
               <DropdownToggle nav caret>

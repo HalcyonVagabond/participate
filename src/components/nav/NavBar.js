@@ -35,10 +35,10 @@ const NavBar = (props) => {
               <NavLink className="navLink" href="/elections">Elections</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="navLink" href="/states">Learn</NavLink>
+              <NavLink className="navLink" href="/learn">Learn</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="navLink" href="/federal">About</NavLink>
+              <NavLink className="navLink" href="/about">About</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
