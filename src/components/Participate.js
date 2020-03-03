@@ -1,8 +1,8 @@
 import React from "react"
-import NavBar from "./nav/NavBar"
-import MasterRouter from "./MasterRouter";
-import Footer from "./nav/Footer"
-import "./nav/NavBar.css"
+import NavBar from "./headerNav/NavBar"
+import BodyRouter from "./BodyRouter";
+import Footer from "./headerNav/Footer"
+import "./headerNav/NavBar.css"
 import "./Participate.css"
 
 
@@ -10,12 +10,13 @@ import "./Participate.css"
 const Participate = () => {
   return (
     <>
+    <div style={{position:'relative'}}>
       <NavBar />
       <div id="bodyWrapper">
-        <MasterRouter />
-        <Footer />
+        <BodyRouter />
       </div>
-
+      <Footer />
+    </div>
     </>
   );
 };
