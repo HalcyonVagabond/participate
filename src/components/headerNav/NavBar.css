@@ -1,0 +1,39 @@
+@import "../Participate.css";
+
+
+.navContainer {
+    background-color: var(--niceBlue);
+}
+
+#logo {
+    width: 280px;
+    margin-bottom: 8px;
+}
+
+.navDropDownContainer {
+    border-radius: 3px;
+    padding-left: 12px;
+}
+.navLinksContainer{
+    margin-left: 5%;
+    width: 60% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+}
+.navLink{
+    transition: 0.5s ease;
+    border-radius: 4px;
+
+}
+.navLink:hover{
+    color: var(--isabelline) !important;
+    background-color: var(--seaBlue) !important;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: 0.5s ease;
+}
+
+.loginPopUp{
+    margin-top: 5% !important;
+}
+

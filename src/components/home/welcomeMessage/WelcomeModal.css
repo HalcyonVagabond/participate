@@ -1,0 +1,14 @@
+@import "../../Participate.css";
+
+
+.welcomeMessage:first-child{
+    margin-top: 10% !important;
+    height: 60% !important;
+}
+.modal-content{
+    width: 120% !important;
+    height: 100% !important;
+}
+.welcomeHeader h5{
+    font-size: 2.5em !important;
+}

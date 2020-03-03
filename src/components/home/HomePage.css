@@ -1,0 +1,24 @@
+@import "../Participate.css";
+
+.welcomeMessage:first-child{
+    margin-top: 10% !important;
+    height: 60% !important;
+}
+.modal-content{
+    width: 120% !important;
+    height: 100% !important;
+}
+.mapHeader{
+    height: 30px !important;
+    padding-top: 10px !important;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 1px lightgray;
+    width: 75% !important;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--royalishBlue) !important;
+}
+.pageContainer {
+    border-top: 1px solid black;
+}

@@ -4,7 +4,7 @@
 
     --vividSkyBlue: rgba(53, 207, 255, 1);
     --niceBlue: rgba(57, 182, 255, 1);
-    --royalishBlue: rgba(1, 74, 173, 1);
+    --royalishBlue: rgba(8, 97, 218, 1);
     --pastelGreen: rgba(116, 234, 86, 1);
     --lemonGlacier: rgba(246, 255, 0, 1);
     --orange: rgba(255, 182, 0, 1);
@@ -39,17 +39,19 @@
 
 #bodyWrapper {
     position: relative;
-    min-height: 100vh;
+    min-height: 90vh;
+    
 }
 
 @media (min-width: 1300px) {
 
-    .mapContainer{
+    #bodyWrapper {
+        position: relative;
+        min-height: 100vh !important;
         max-width: 72%;
-        margin-top: 1%;
+        margin-top: 0% !important;
         margin-left: 25%;
         height: 100%;
-        
     }
 
     .navContainer{
@@ -59,7 +61,11 @@
         height: 100% !important;
 
     }
-   
+
+    #navLogin {
+        margin-bottom: 200% !important;
+    }
+
     .navLinksContainer {
         flex-direction: column !important;
     }
