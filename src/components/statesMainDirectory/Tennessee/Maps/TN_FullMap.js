@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Jumbotron } from "reactstrap"
 import TN_mapWithCounties from "./TN_mapWithCounties"
-import USCountryToolbar from "../../../mapTemplates/Toolbars/USCountryToolbar/USCountryToolbar"
+import USCountryToolbar from "../../../mapTemplates/toolbars/usaCountryToolbar/USCountryToolbar"
 import "../../../usaCountryMap/US_FullMap.css"
 
 
@@ -32,6 +32,7 @@ const TN_FullMap = (props) => {
             <Jumbotron className="jumbo">
                     <USCountryToolbar/>
                     <TN_mapWithCounties />
+                    
             </Jumbotron>
         </section>
     )

@@ -6,16 +6,13 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
   Dropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  NavbarText,
   Button
 } from 'reactstrap';
-import "./US_MapToolbar.css"
+import "./USCountryToolbar.css"
 
 const US_MapToolbar = (props) => {
   // For collapsed navbar
@@ -26,22 +23,22 @@ const US_MapToolbar = (props) => {
   const toggle2 = () => setDropdownOpen(prevState => !prevState);
 
   return (
-    <div className="mapToolbar" id="countryMapToolbar">
+    <div className="mapToolbar" id="countryMapToolbar" onClick={props.consoleLog}>
       <Navbar color="light" light expand="md">
         <NavbarBrand href="/">Governments</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
-            <NavItem onClick={props.selectLevel}>
+            <NavItem onClick={console.log(props)}>
               <Button className="levelSelect" value="city">City</Button>
             </NavItem>
-            <NavItem onClick={props.selectLevel}>
+            <NavItem>
               <Button className="levelSelect" value="county">County</Button>
             </NavItem>
-            <NavItem onClick={props.selectLevel}>
+            <NavItem>
               <Button className="levelSelect" value="state">State</Button>
             </NavItem>
-            <NavItem onClick={props.selectLevel}>
+            <NavItem>
               <Button className="levelSelect" value="federal">Federal</Button>
             </NavItem>
             

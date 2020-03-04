@@ -177,7 +177,7 @@ const US_CountryMapCard = (props) => {
                     <g id="DC">
                         <title>District of Columbia</title>
                         <path id="DC1" d="M801.8,253.8 l-1.1-1.6 -1-0.8 1.1-1.6 2.2,1.5z" />
-                        <circle id="DC2" stroke="#FFFFFF" strokeWidth="1.5" cx="801.3" cy="251.8" r="5" opacity="1" />
+                        <circle id="DC2" stroke="#FFFFFF" strokeWidth="1.5" cx="801.3" cy="251.8" r="5" opacity="0" />
                         {/* <!-- Set opacity to "0" to hide DC circle --> */}
                     </g>
                 </g>

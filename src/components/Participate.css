@@ -29,12 +29,10 @@
 /* ***** Find Footer in Footer.css*/
 
 .mapContainer {
-    width: 90%;
     max-width: 900px;
     padding-top: 40px;
     margin-right: auto;
-    margin-left: auto;
-        
+    margin-left: auto;       
 }
 
 #bodyWrapper {
@@ -44,11 +42,13 @@
 }
 
 @media (min-width: 1300px) {
+    .mapContainer{
+        max-width: 80% !important;
+    }
 
     #bodyWrapper {
         position: relative;
         min-height: 100vh !important;
-        max-width: 72%;
         margin-top: 0% !important;
         margin-left: 25%;
         height: 100%;

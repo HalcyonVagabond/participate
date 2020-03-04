@@ -13,7 +13,7 @@ const Participate = () => {
     <div style={{position:'relative'}}>
       <NavBar />
       <div id="bodyWrapper">
-        <BodyRouter />
+        <BodyRouter style={{marginBottom: '20px'}}/>
       </div>
       <Footer />
     </div>

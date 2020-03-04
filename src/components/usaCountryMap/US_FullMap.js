@@ -13,7 +13,6 @@ const US_FullMap = (props) => {
     const selectLevel = (event) => {
         const levelValue = event.target.value
         return changeGovLevel(levelValue)
-
     }
 
     const selectState = (event) => {
@@ -22,6 +21,7 @@ const US_FullMap = (props) => {
     }
 
     useEffect(()=>{
+        console.log(govLevel)
         if(stateSelected !== '') {
             props.history.push(`/${stateSelected}`,govLevel)
         }

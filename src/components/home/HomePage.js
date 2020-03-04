@@ -8,8 +8,12 @@ import "./HomePage.css"
 const HomePage = (props) => {
 
     const welcomeMessageConditional = () => {
+        const setActiveAnonymousUser = () => {
+            return sessionStorage.setItem('user', JSON.stringify({'activeAnonymousUser': true}));
+          }
+
         if (sessionStorage.getItem('user') === null) {
-            return <WelcomeModal className="welcomeMessage" />
+            return <WelcomeModal className="welcomeMessage" onClick={setActiveAnonymousUser} setActiveAnonymousUser={setActiveAnonymousUser}/>
         }
     }
 

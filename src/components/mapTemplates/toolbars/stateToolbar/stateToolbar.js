@@ -15,9 +15,9 @@ import {
   NavbarText,
   Button
 } from 'reactstrap';
-import "./USCountryToolbar.css"
+import "../toolbar.css"
 
-const US_MapToolbar = (props) => {
+const stateToolbar = (props) => {
   // For collapsed navbar
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
@@ -26,7 +26,7 @@ const US_MapToolbar = (props) => {
   const toggle2 = () => setDropdownOpen(prevState => !prevState);
 
   return (
-    <div className="mapToolbar" id="countryMapToolbar" onClick={props.consoleLog}>
+    <div className="mapToolbar stateMapToolbar" onClick={props.consoleLog}>
       <Navbar color="light" light expand="md">
         <NavbarBrand href="/">Governments</NavbarBrand>
         <NavbarToggler onClick={toggle} />

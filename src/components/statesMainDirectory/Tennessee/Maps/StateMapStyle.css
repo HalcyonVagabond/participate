@@ -1,4 +1,5 @@
 
+
 header {
     margin-left: auto;
     margin-right: auto;
@@ -48,4 +49,17 @@ text tspan{
     width: 1% !important;
     font-size: 2px;
     z-index: 2;
+}
+
+.mapToggleButton {
+    width: 100% !important;
+    margin-top: 2% !important;
+}
+.openToggle {
+    color: darkgray !important;
+    background-color: lightgray !important;
+}
+.closedToggle {
+    color: white !important;
+    background-color: var(--royalishBlue) !important;
 }
