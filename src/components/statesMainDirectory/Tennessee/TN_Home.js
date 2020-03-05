@@ -30,6 +30,7 @@ const TN_Home = (props) => {
 
   return (
     <>
+    <h1 className="stateBanner">Tennessee</h1>
     <div className="mapCollapseContainer" onClick={consoleLogProps}>
       <Button className={`mapToggleButton ${toggleButtonColor()}`}  onClick={toggle} style={{ marginBottom: '1rem' }}>Toggle Map</Button>
       <Collapse isOpen={isOpen}>

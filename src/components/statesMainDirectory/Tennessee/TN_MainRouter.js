@@ -26,7 +26,7 @@ const TN_MainRouter = (props) => {
                     render={props => {
                     return (
                         <>
-                        <TN_Home />
+                        <TN_Home {...props}/>
                         <NashvilleMain {...props} />
                         </>
                         )

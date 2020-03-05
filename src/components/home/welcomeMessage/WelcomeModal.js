@@ -13,7 +13,7 @@ const WelcomeModal = (props) => {
   const toggle = () => setModal(!modal);
   
   const setActiveAnonymousUser = () => {
-    return sessionStorage.setItem('user', JSON.stringify({'activeAnonymousUser': true}));
+    return sessionStorage.setItem('anonymousUser', JSON.stringify({'activeAnonymousUser': true}));
   }
 
   const setUserAndClearMessage = () => {

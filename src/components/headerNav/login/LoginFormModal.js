@@ -38,12 +38,15 @@ const LoginFormModal = (props) => {
 
   const handleLogin = (e) => {
     e.preventDefault();
+    toggleNested()
+    sessionStorage.clear()
     sessionStorage.setItem(
       'user',
       JSON.stringify(credentials)
     );
-  };
-
+    console.log(props)
+    // props.history.push('/')
+    };
   const goHome = () => {
     console.log(props.history)
     toggle()
@@ -78,7 +81,7 @@ const LoginFormModal = (props) => {
           </Modal>
         </ModalBody>
         <ModalFooter>
-        <Button color="primary" type="submit" onClick={toggleNested}>Login</Button>
+        <Button color="primary" type="submit" onClick={handleLogin}>Login</Button>
         </ModalFooter>
       </Modal>
     </div>

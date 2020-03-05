@@ -17,7 +17,7 @@ const TN_GovernmentTabs = (props) => {
             className={classnames({ active: activeTab === '1' })}
             onClick={() => { toggle('1'); }}
           >
-            Tab1
+            Overview
           </NavLink>
         </NavItem>
         <NavItem>
@@ -25,7 +25,23 @@ const TN_GovernmentTabs = (props) => {
             className={classnames({ active: activeTab === '2' })}
             onClick={() => { toggle('2'); }}
           >
-            Moar Tabs
+            Elected Officials
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink
+            className={classnames({ active: activeTab === '3' })}
+            onClick={() => { toggle('3'); }}
+          >
+            Departments and Committees
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink
+            className={classnames({ active: activeTab === '4' })}
+            onClick={() => { toggle('4'); }}
+          >
+            How to Participate
           </NavLink>
         </NavItem>
       </Nav>
@@ -33,7 +49,7 @@ const TN_GovernmentTabs = (props) => {
         <TabPane tabId="1">
           <Row>
             <Col sm="12">
-              <h4>Tab 1 Contents</h4>
+              <h4>Tennessee Government</h4>
             </Col>
           </Row>
         </TabPane>
@@ -41,14 +57,57 @@ const TN_GovernmentTabs = (props) => {
           <Row>
             <Col sm="6">
               <Card body>
-                <CardTitle>Special Title Treatment</CardTitle>
+                <CardTitle>Executive Branch</CardTitle>
                 <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
                 <Button>Go somewhere</Button>
               </Card>
             </Col>
             <Col sm="6">
               <Card body>
-                <CardTitle>Special Title Treatment</CardTitle>
+                <CardTitle>Legislative Branch</CardTitle>
+                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                <Button>Go somewhere</Button>
+              </Card>
+            </Col>
+            <Col sm="6">
+              <Card body>
+                <CardTitle>Judicial Brach</CardTitle>
+                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                <Button>Go somewhere</Button>
+              </Card>
+            </Col>
+          </Row>
+        </TabPane>
+        <TabPane tabId="3">
+          <Row>
+            <Col sm="6">
+              <Card body>
+                <CardTitle>Department of Community Development</CardTitle>
+                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                <Button>Go somewhere</Button>
+              </Card>
+            </Col>
+            <Col sm="6">
+              <Card body>
+                <CardTitle>Department of Conservation</CardTitle>
+                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                <Button>Go somewhere</Button>
+              </Card>
+            </Col>
+          </Row>
+        </TabPane>
+        <TabPane tabId="4">
+          <Row>
+            <Col sm="6">
+              <Card body>
+                <CardTitle>Senate Meetings</CardTitle>
+                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                <Button>Go somewhere</Button>
+              </Card>
+            </Col>
+            <Col sm="6">
+              <Card body>
+                <CardTitle>House Meetings</CardTitle>
                 <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
                 <Button>Go somewhere</Button>
               </Card>

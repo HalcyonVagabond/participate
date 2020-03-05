@@ -9,10 +9,10 @@ const HomePage = (props) => {
 
     const welcomeMessageConditional = () => {
         const setActiveAnonymousUser = () => {
-            return sessionStorage.setItem('user', JSON.stringify({'activeAnonymousUser': true}));
+            return sessionStorage.setItem('anonymousUser', JSON.stringify({'activeAnonymousUser': true}));
           }
 
-        if (sessionStorage.getItem('user') === null) {
+        if (sessionStorage.getItem('anonymousUser') === null && sessionStorage.getItem('user') === null) {
             return <WelcomeModal className="welcomeMessage" onClick={setActiveAnonymousUser} setActiveAnonymousUser={setActiveAnonymousUser}/>
         }
     }
