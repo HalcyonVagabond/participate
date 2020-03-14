@@ -47,10 +47,16 @@
     margin-right: auto;
     margin-left: auto;       
 }
-
+body {
+    height: 100%;
+}
+#mainContainer{
+    height: 100%;
+}
 #bodyWrapper {
     position: relative;
     min-height: 100vh;
+    margin-bottom: 5vh !important;
     
 }
 

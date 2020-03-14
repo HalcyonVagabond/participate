@@ -21,7 +21,7 @@ const HomePage = (props) => {
         <>
             {welcomeMessageConditional()}
             <div className="mapContainer">
-                <Jumbotron className="mapHeader"><h1>Search Governments</h1></Jumbotron>
+                <h1 className="mapHeader">Search Governments</h1>
                 <US_FullMap {...props} />
             </div>
         </>

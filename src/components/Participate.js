@@ -10,12 +10,14 @@ import "./Participate.css"
 const Participate = (props) => {
   return (
     <>
-    <div style={{position:'relative'}}>
+    <div id="mainContainer" >
       <NavBar {...props}/>
       <div id="bodyWrapper">
-        <BodyRouter {...props} style={{marginBottom: '20px'}}/>
+        <BodyRouter {...props} />
       </div>
+      <div style={{position:'relative'}}>
       <Footer {...props}/>
+      </div>
     </div>
     </>
   );
