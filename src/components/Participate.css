@@ -28,27 +28,46 @@
 /* ***** Find NavBar in NavBar.css */
 /* ***** Find Footer in Footer.css*/
 
+.stateBanner{
+    color: var(--isabelline);
+    background-color: var(--independence);
+    width: 40%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px gray;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    text-align: center;
+    padding: 10px;
+}
+
 .mapContainer {
-    width: 90%;
     max-width: 900px;
     padding-top: 40px;
     margin-right: auto;
-    margin-left: auto;
-        
+    margin-left: auto;       
 }
-
+body {
+    height: 100%;
+}
+#mainContainer{
+    height: 100%;
+}
 #bodyWrapper {
     position: relative;
-    min-height: 90vh;
+    min-height: 100vh;
+    margin-bottom: 5vh !important;
     
 }
 
 @media (min-width: 1300px) {
+    .mapContainer{
+        max-width: 80% !important;
+    }
 
     #bodyWrapper {
         position: relative;
         min-height: 100vh !important;
-        max-width: 72%;
         margin-top: 0% !important;
         margin-left: 25%;
         height: 100%;
@@ -57,6 +76,7 @@
     .navContainer{
         flex-direction: column !important;
         position: fixed !important;
+        top: 0;
         left: 0 !important;
         height: 100% !important;
 

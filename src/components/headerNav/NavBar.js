@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./NavBar.css"
 import {
   Collapse,
@@ -22,22 +22,17 @@ const NavBar = (props) => {
 
   const toggle = () => setIsOpen(!isOpen);
 
-  // const loginPopUp = () => {
-  //   const [modal, setModal] = useState(false);
-  //   const [nestedModal, setNestedModal] = useState(false);
-  //   const [closeAll, setCloseAll] = useState(false);
-  
-  //   const toggle = () => setModal(!modal);
-  //   const toggleNested = () => {
-  //     setNestedModal(!nestedModal);
-  //     setCloseAll(false);
-  //   }
-  //   const toggleAll = () => {
-  //     setNestedModal(!nestedModal);
-  //     setCloseAll(true);
-  //   }
-     
-  // }
+  const checkIfLoggedIn = () => {
+    if(sessionStorage.getItem('user') === null) {
+      return <LoginFormModal props={props} className="loginPopUp" buttonLabel="Login"/>
+    } else {
+      return <NavLink className="navLink" href="/myprofile"><Button color='primary'>My Profile</Button></NavLink>
+    }
+  }
+
+  useEffect(() => {
+    checkIfLoggedIn()
+  }, [sessionStorage])
 
   return (
     <div>
@@ -61,7 +56,7 @@ const NavBar = (props) => {
             </NavItem>
           </Nav>
         </Collapse>
-        <LoginFormModal props={props} className="loginPopUp" buttonLabel="Login"/>
+        {checkIfLoggedIn()}
       </Navbar>
     </div>
   );

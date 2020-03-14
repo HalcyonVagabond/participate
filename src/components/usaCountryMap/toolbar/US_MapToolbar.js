@@ -26,22 +26,22 @@ const US_MapToolbar = (props) => {
   const toggle2 = () => setDropdownOpen(prevState => !prevState);
 
   return (
-    <div className="mapToolbar" id="countryMapToolbar" onClick={props.selectLevel}>
+    <div className="mapToolbar" id="countryMapToolbar">
       <Navbar color="light" light expand="md">
         <NavbarBrand href="/">Governments</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
-            <NavItem>
+            <NavItem onClick={props.selectLevel}>
               <Button className="levelSelect" value="city">City</Button>
             </NavItem>
-            <NavItem>
+            <NavItem onClick={props.selectLevel}>
               <Button className="levelSelect" value="county">County</Button>
             </NavItem>
-            <NavItem>
+            <NavItem onClick={props.selectLevel}>
               <Button className="levelSelect" value="state">State</Button>
             </NavItem>
-            <NavItem>
+            <NavItem onClick={props.selectLevel}>
               <Button className="levelSelect" value="federal">Federal</Button>
             </NavItem>
             

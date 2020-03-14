@@ -8,8 +8,12 @@ import "./HomePage.css"
 const HomePage = (props) => {
 
     const welcomeMessageConditional = () => {
-        if (sessionStorage.getItem('user') === null) {
-            return <WelcomeModal className="welcomeMessage" />
+        const setActiveAnonymousUser = () => {
+            return sessionStorage.setItem('anonymousUser', JSON.stringify({'activeAnonymousUser': true}));
+          }
+
+        if (sessionStorage.getItem('anonymousUser') === null && sessionStorage.getItem('user') === null) {
+            return <WelcomeModal className="welcomeMessage" onClick={setActiveAnonymousUser} setActiveAnonymousUser={setActiveAnonymousUser}/>
         }
     }
 
@@ -17,7 +21,7 @@ const HomePage = (props) => {
         <>
             {welcomeMessageConditional()}
             <div className="mapContainer">
-                <Jumbotron className="mapHeader"><h1>Search Governments</h1></Jumbotron>
+                <h1 className="mapHeader">Search Governments</h1>
                 <US_FullMap {...props} />
             </div>
         </>

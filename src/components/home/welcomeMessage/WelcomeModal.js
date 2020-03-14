@@ -13,7 +13,7 @@ const WelcomeModal = (props) => {
   const toggle = () => setModal(!modal);
   
   const setActiveAnonymousUser = () => {
-    return sessionStorage.setItem('user', JSON.stringify({'activeAnonymousUser': true}));
+    return sessionStorage.setItem('anonymousUser', JSON.stringify({'activeAnonymousUser': true}));
   }
 
   const setUserAndClearMessage = () => {
@@ -23,7 +23,7 @@ const WelcomeModal = (props) => {
 
   return (
     <div>
-      <Modal isOpen={modal} toggle={toggle} className={className}>
+      <Modal isOpen={modal} toggle={toggle} className={className} onClick={setUserAndClearMessage}>
         <ModalHeader className="welcomeHeader" toggle={toggle}>Welcome to Participate!</ModalHeader>
         <ModalBody>
             Participate is an open source civic education and engagement platform. We want to encourage and empower you to get back into your own life and community by providing easy access to information about your local governments, institutions, and systems.<br/><br/>Explore the different governments of the United States via our intuitive map system, or by searching for them directly in the map toolbar. Explore the rest of the site via the Navigation Bar.<br/><br/>Have fun, learn something new, and go Participate!

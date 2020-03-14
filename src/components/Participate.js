@@ -7,15 +7,17 @@ import "./Participate.css"
 
 
 
-const Participate = () => {
+const Participate = (props) => {
   return (
     <>
-    <div style={{position:'relative'}}>
-      <NavBar />
+    <div id="mainContainer" >
+      <NavBar {...props}/>
       <div id="bodyWrapper">
-        <BodyRouter />
+        <BodyRouter {...props} />
       </div>
-      <Footer />
+      <div style={{position:'relative'}}>
+      <Footer {...props}/>
+      </div>
     </div>
     </>
   );

@@ -1,10 +1,11 @@
 import React from "react"
 import { Route, Switch } from "react-router-dom"
-import NashvilleMain from "./Cities/Nashville/NashvilleMain"
-import TN_FullMap from "./Maps/TN_FullMap"
+import TN_Home from "./TN_Home"
+import TN_GovernmentTabs from "./state/TN_GovernmentTabs"
+import NashvilleMain from "./cities/Nashville/NashvilleMain"
 import InProgressMessage from "../../rerouteMessages/InProgressMessage"
 
-const TN_MainRouter = () => {
+const TN_MainRouter = (props) => {
 
     return (
       <>
@@ -13,16 +14,20 @@ const TN_MainRouter = () => {
                     exact
                     path="/tennessee"
                     render={props => {
-                    return <TN_FullMap />
-                    }}
+                    return (
+                    <>
+                    <TN_Home {...props} />
+                    <TN_GovernmentTabs {...props} />
+                    </>
+                    )}}
                 />
                 <Route
                     path="/tennessee/nashville"
                     render={props => {
                     return (
                         <>
-                        <TN_FullMap />
-                        <NashvilleMain />
+                        <TN_Home {...props}/>
+                        <NashvilleMain {...props} />
                         </>
                         )
                     }}

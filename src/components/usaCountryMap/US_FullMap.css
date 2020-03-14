@@ -4,12 +4,13 @@
 }
 
 .fullMapContainer {
-    padding-top: 2%;
+    padding-top: 3%;
     padding-bottom: 2%;
     padding-left: 6%;
     padding-right: 6%;
     border-left: 1px solid lightgray;
     border-right: 1px solid lightgray;
+    
 }
 
 .actualMap {
