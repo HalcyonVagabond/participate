@@ -15,7 +15,9 @@ import {
   NavbarText,
   Button
 } from 'reactstrap';
+import {Checkbox} from "semantic-ui-react"
 import LoginFormModal from "./login/LoginFormModal"
+import PrivacyToggle from "./PrivacyToggle"
 
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +26,7 @@ const NavBar = (props) => {
 
   const checkIfLoggedIn = () => {
     if(sessionStorage.getItem('user') === null) {
-      return <LoginFormModal props={props} className="loginPopUp" buttonLabel="Login"/>
+      return <LoginFormModal props={props} className="loginPopUp" buttonLabel="Login" changeIsLoggedIn={props.changeIsLoggedIn} />
     } else {
       return <NavLink className="navLink" href="/myprofile"><Button color='primary'>My Profile</Button></NavLink>
     }
@@ -57,7 +59,9 @@ const NavBar = (props) => {
           </Nav>
         </Collapse>
         {checkIfLoggedIn()}
+        
       </Navbar>
+      <Checkbox slider />
     </div>
   );
 }

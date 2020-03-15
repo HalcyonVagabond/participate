@@ -44,11 +44,10 @@ const LoginFormModal = (props) => {
       'user',
       JSON.stringify(credentials)
     );
-    console.log(props)
+    props.changeIsLoggedIn(true)
     // props.history.push('/')
     };
   const goHome = () => {
-    console.log(props.history)
     toggle()
   };
 
