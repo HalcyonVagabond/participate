@@ -1,12 +1,20 @@
-import React from "react"
-import { Checkbox } from  "semantic-ui-react"
+import React, {useState, useEffect} from 'react'
+import { Checkbox } from 'semantic-ui-react'
 
-const PrivacyToggle = () => {
+const PrivacyToggle = ({privacyMode, changePrivacyMode}) => {
 
-    return (
-        <Checkbox toggle />
-    )
+  useEffect(()=>{
+    if(privacyMode === true){
+      console.log('on')
+    } else {
+      console.log('off')
+    }
+  }, [privacyMode])
 
-}
+
+  return (
+    <Checkbox toggle onChange={()=>changePrivacyMode(!privacyMode)}/>
+  );
+};
 
 export default PrivacyToggle;

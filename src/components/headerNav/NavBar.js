@@ -21,15 +21,16 @@ import PrivacyToggle from "./PrivacyToggle"
 
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [ privacyMode, changePrivacyMode ] = useState(false)
 
   const toggle = () => setIsOpen(!isOpen);
 
   const checkIfLoggedIn = () => {
-    if(sessionStorage.getItem('user') === null) {
-      return <LoginFormModal props={props} className="loginPopUp" buttonLabel="Login" changeIsLoggedIn={props.changeIsLoggedIn} />
-    } else {
+    if(sessionStorage.getItem('user') === null && privacyMode === false) {
+      return <LoginFormModal props={props} className="loginPopUp" buttonLabel="Login" changeIsLoggedIn={props.changeIsLoggedIn} /> 
+    } else if(privacyMode === false) {
       return <NavLink className="navLink" href="/myprofile"><Button color='primary'>My Profile</Button></NavLink>
-    }
+    } 
   }
 
   useEffect(() => {
@@ -59,9 +60,8 @@ const NavBar = (props) => {
           </Nav>
         </Collapse>
         {checkIfLoggedIn()}
-        
+        <PrivacyToggle privacyMode={privacyMode} changePrivacyMode={changePrivacyMode}/>
       </Navbar>
-      <Checkbox slider />
     </div>
   );
 }
