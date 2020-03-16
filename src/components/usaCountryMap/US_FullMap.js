@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Jumbotron } from "reactstrap"
 import US_CountryMapCard from "./US_CountryMapCard"
 import US_MapToolbar from "./toolbar/US_MapToolbar"
-import "./US_FullMap.css"
+import "../mapTemplates/FullMap.css"
 import convertRegion from "../../modules/convertRegion"
 
 const US_FullMap = (props) => {

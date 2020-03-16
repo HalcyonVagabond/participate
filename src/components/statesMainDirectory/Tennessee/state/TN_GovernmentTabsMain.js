@@ -10,8 +10,8 @@ const TN_GovernmentTabs = (props) => {
   }
 
   return (
-    <div>
-      <Nav tabs>
+    <div id='tabsContainer'>
+      <Nav tabs id='tabsMain'>
         <NavItem>
           <NavLink
             className={classnames({ active: activeTab === '1' })}

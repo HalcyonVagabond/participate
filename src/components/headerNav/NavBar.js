@@ -15,9 +15,8 @@ import {
   NavbarText,
   Button
 } from 'reactstrap';
-import {Checkbox} from "semantic-ui-react"
 import LoginFormModal from "./login/LoginFormModal"
-import PrivacyToggle from "./PrivacyToggle"
+import PrivacyToggle from "./privacyToggle/PrivacyToggle"
 
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,9 +26,18 @@ const NavBar = (props) => {
 
   const checkIfLoggedIn = () => {
     if(sessionStorage.getItem('user') === null && privacyMode === false) {
-      return <LoginFormModal props={props} className="loginPopUp" buttonLabel="Login" changeIsLoggedIn={props.changeIsLoggedIn} /> 
+
+      return(
+        <NavItem>
+          <LoginFormModal props={props} className="loginPopUp" buttonLabel="Login" changeIsLoggedIn={props.changeIsLoggedIn} /> 
+        </NavItem>
+      ); 
     } else if(privacyMode === false) {
-      return <NavLink className="navLink" href="/myprofile"><Button color='primary'>My Profile</Button></NavLink>
+      return (
+        <NavItem>
+          <NavLink className="navLink" href="/myprofile"><Button color='primary'>My Profile</Button></NavLink>
+        </NavItem>
+      ) 
     } 
   }
 
@@ -57,10 +65,13 @@ const NavBar = (props) => {
             <NavItem>
               <NavLink className="navLink" href="/about">About</NavLink>
             </NavItem>
+            <DropdownItem divider />
+            {checkIfLoggedIn()}
+            <NavItem>
+              <PrivacyToggle privacyMode={privacyMode} changePrivacyMode={changePrivacyMode}/>
+            </NavItem>
           </Nav>
         </Collapse>
-        {checkIfLoggedIn()}
-        <PrivacyToggle privacyMode={privacyMode} changePrivacyMode={changePrivacyMode}/>
       </Navbar>
     </div>
   );
