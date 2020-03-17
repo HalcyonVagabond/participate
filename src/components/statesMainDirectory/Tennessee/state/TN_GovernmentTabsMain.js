@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
+import "../../../GovernmentPage.css"
 
 const TN_GovernmentTabs = (props) => {
   const [activeTab, setActiveTab] = useState('1');
@@ -10,8 +11,8 @@ const TN_GovernmentTabs = (props) => {
   }
 
   return (
-    <div id='tabsContainer'>
-      <Nav tabs id='tabsMain'>
+    <div className='tabsContainer'>
+      <Nav tabs className='tabsMain'>
         <NavItem>
           <NavLink
             className={classnames({ active: activeTab === '1' })}
@@ -45,7 +46,7 @@ const TN_GovernmentTabs = (props) => {
           </NavLink>
         </NavItem>
       </Nav>
-      <TabContent activeTab={activeTab}>
+      <TabContent className='tabContent' activeTab={activeTab}>
         <TabPane tabId="1">
           <Row>
             <Col sm="12">

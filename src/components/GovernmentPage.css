@@ -1,0 +1,23 @@
+
+.tabsMain{
+    padding-top: 5px;
+    padding-left: 10px !important;
+    background-color: lightgray;
+}
+.tabsMain .nav-link {
+    cursor: pointer !important;
+    background-color: white !important;
+}
+.tabsMain .active {
+    color: white !important;
+    background-color: var(--royalishBlue) !important;
+}
+.tabContent{
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    background-color: lightgray;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    padding: 5vw;
+}
