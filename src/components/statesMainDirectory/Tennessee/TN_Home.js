@@ -1,45 +1,76 @@
 import React, { useState, useEffect } from "react"
-import { Collapse, Button, CardBody, Card } from 'reactstrap';
+import { Collapse, Button } from "reactstrap"
 import TN_FullMap from "./maps/TN_FullMap"
+import TN_GovernmentTabsMain from "./state/TN_GovernmentTabsMain"
 
 const TN_Home = (props) => {
-  const [isOpen, setIsOpen] = useState(true);
 
-  const toggle = () => setIsOpen(!isOpen);
+  const [isMapOpen, setIsMapOpen] = useState(false);
+  const [isGovOpen, setIsGovOpen] = useState(false);
 
-  const toggleButtonColor = () => {
-    if (isOpen === true){
+  const [ govLevel, changeGovLevel ] = useState(props.location.state)
+  // const [ areaSelected, setAreaSelected ] = useState()
+
+  const toggleMap = () => setIsMapOpen(!isMapOpen);
+  const toggleGov = () => setIsGovOpen(!isGovOpen);
+
+  const toggleMapButtonColor = () => {
+    if (isMapOpen === true){
       return 'openToggle'
-    } else if (isOpen === false) {
+    } else if (isMapOpen === false) {
       return 'closedToggle'
+    } 
+  }
+  const toggleGovButtonColor = () => {
+    if (isGovOpen === true){
+      return 'openToggle'
+    } else if (isGovOpen === false) {
+      return 'closedToggle'
+    } 
+  }
+
+  const stateGovernment = () => {
+
+    if (props.location.pathname === '/tennessee') {
+      return (
+        <>
+          <Button className={`mapToggleButton ${toggleGovButtonColor()}`}  onClick={toggleGov} style={{ marginBottom: '1rem' }}>Toggle Tennessee Government</Button>
+          <Collapse isOpen={isGovOpen}>
+              <h1 className="stateBanner">Tennessee</h1>
+              <TN_GovernmentTabsMain />
+          </Collapse>
+
+        </>
+      )
+    } else {
+      return null
     }
   }
 
-  const consoleLogProps = () => {
-    return console.log(props)
+  const routeToSelectedArea = (event) => {
+    console.log(event)
+    props.history.push(`/tennessee/${event.target.id.toLowerCase()}`)
   }
 
   useEffect(() => {
-    const govLevel = props.location.state
 
-    if(govLevel === 'state'){
-      setIsOpen(false)
-      return console.log(govLevel)
+    if(govLevel !== 'state'){
+      setIsMapOpen(true)
+      return console.log(props.history)
+    } else {
+      setIsMapOpen(false)
+      setIsGovOpen(true)
+      props.history.push('/tennessee')
     }
-  }, [])
+  }, [govLevel])
 
   return (
     <>
-    <h1 className="stateBanner">Tennessee</h1>
-    <div className="mapCollapseContainer" onClick={consoleLogProps}>
-      <Button className={`mapToggleButton ${toggleButtonColor()}`}  onClick={toggle} style={{ marginBottom: '1rem' }}>Toggle Map</Button>
-      <Collapse isOpen={isOpen}>
-        
-        <Card>
-          <TN_FullMap props={props} />
-        </Card>
+      <Button className={`mapToggleButton ${toggleMapButtonColor()}`}  onClick={toggleMap} style={{ marginBottom: '1rem' }}>Toggle State Map</Button>
+      <Collapse isOpen={isMapOpen}>
+          <TN_FullMap govLevel={govLevel} changeGovLevel={changeGovLevel} routeToSelectedArea={routeToSelectedArea} />
       </Collapse>
-    </div>
+    {stateGovernment()}
     </>
   );
 }

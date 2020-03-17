@@ -1,7 +1,7 @@
 import React from "react"
 import { Route, Switch } from "react-router-dom"
 import TN_Home from "./TN_Home"
-import TN_GovernmentTabs from "./state/TN_GovernmentTabs"
+import TN_GovernmentTabs from "./state/TN_GovernmentTabsMain"
 import NashvilleMain from "./cities/Nashville/NashvilleMain"
 import InProgressMessage from "../../rerouteMessages/InProgressMessage"
 
@@ -15,10 +15,7 @@ const TN_MainRouter = (props) => {
                     path="/tennessee"
                     render={props => {
                     return (
-                    <>
                     <TN_Home {...props} />
-                    <TN_GovernmentTabs {...props} />
-                    </>
                     )}}
                 />
                 <Route

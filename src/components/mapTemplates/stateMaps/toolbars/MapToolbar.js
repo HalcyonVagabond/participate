@@ -6,18 +6,12 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText,
   Button
 } from 'reactstrap';
-import "../toolbar.css"
+import "../../../../usaCountryMap/toolbar/US_MapToolbar.css"
+import TN_DropDowns from "./TN_DropDowns"
 
-const stateToolbar = (props) => {
+const TN_MapToolbar = (props) => {
   // For collapsed navbar
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
@@ -26,51 +20,29 @@ const stateToolbar = (props) => {
   const toggle2 = () => setDropdownOpen(prevState => !prevState);
 
   return (
-    <div className="mapToolbar stateMapToolbar" onClick={props.consoleLog}>
+    <div className="mapToolbar" id="countryMapToolbar">
       <Navbar color="light" light expand="md">
         <NavbarBrand href="/">Governments</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
-            <NavItem>
+            <NavItem onClick={props.selectLevel}>
               <Button className="levelSelect" value="city">City</Button>
             </NavItem>
-            <NavItem>
+            <NavItem onClick={props.selectLevel}>
               <Button className="levelSelect" value="county">County</Button>
             </NavItem>
-            <NavItem>
+            <NavItem onClick={props.selectLevel}>
               <Button className="levelSelect" value="state">State</Button>
             </NavItem>
-            <NavItem>
+            <NavItem onClick={props.selectLevel}>
               <Button className="levelSelect" value="federal">Federal</Button>
             </NavItem>
             
           </Nav>
           <Nav className="mr-auto" navbar>
-          <Dropdown isOpen={dropdownOpen} toggle={toggle2} nav inNavbar>
-              <DropdownToggle nav caret>
-                Select State
-              </DropdownToggle>
-              <DropdownMenu right className="dropDownContainer">
-                <DropdownItem>
-                  Tennessee
-                </DropdownItem>
-                <DropdownItem>
-                  Kentucky
-                </DropdownItem>
-                <DropdownItem>
-                  New York
-                </DropdownItem>
-                <DropdownItem>
-                  California
-                </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>
-                  Reset
-                </DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          <Button>Search</Button>
+          
+          <TN_DropDowns govLevel={props.govLevel} />
           </Nav>
         </Collapse>
       </Navbar>
@@ -78,4 +50,4 @@ const stateToolbar = (props) => {
   );
 }
 
-export default US_MapToolbar;
+export default TN_MapToolbar;

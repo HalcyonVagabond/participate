@@ -16,18 +16,29 @@ import {
   Button
 } from 'reactstrap';
 import LoginFormModal from "./login/LoginFormModal"
+import PrivacyToggle from "./privacyToggle/PrivacyToggle"
 
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [ privacyMode, changePrivacyMode ] = useState(false)
 
   const toggle = () => setIsOpen(!isOpen);
 
   const checkIfLoggedIn = () => {
-    if(sessionStorage.getItem('user') === null) {
-      return <LoginFormModal props={props} className="loginPopUp" buttonLabel="Login"/>
-    } else {
-      return <NavLink className="navLink" href="/myprofile"><Button color='primary'>My Profile</Button></NavLink>
-    }
+    if(sessionStorage.getItem('user') === null && privacyMode === false) {
+
+      return(
+        <NavItem>
+          <LoginFormModal props={props} className="loginPopUp" buttonLabel="Login" changeIsLoggedIn={props.changeIsLoggedIn} /> 
+        </NavItem>
+      ); 
+    } else if(privacyMode === false) {
+      return (
+        <NavItem>
+          <NavLink className="navLink" href="/myprofile"><Button color='primary'>My Profile</Button></NavLink>
+        </NavItem>
+      ) 
+    } 
   }
 
   useEffect(() => {
@@ -54,9 +65,13 @@ const NavBar = (props) => {
             <NavItem>
               <NavLink className="navLink" href="/about">About</NavLink>
             </NavItem>
+            <DropdownItem divider />
+            {checkIfLoggedIn()}
+            <NavItem>
+              <PrivacyToggle privacyMode={privacyMode} changePrivacyMode={changePrivacyMode}/>
+            </NavItem>
           </Nav>
         </Collapse>
-        {checkIfLoggedIn()}
       </Navbar>
     </div>
   );

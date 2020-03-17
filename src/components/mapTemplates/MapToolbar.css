@@ -1,5 +1,4 @@
 
-
 .mapToolbar{
     position: absolute;
     width: 90%;
@@ -10,13 +9,16 @@
 .levelSelect{
     border: none !important;
     margin-right: 2px;
-    /* padding: 4px !important; */
     color: #6c757d !important;
     background-color: #f8f9fa !important;
 }
-
 .levelSelect:hover{
     background-color: #6c757d !important;
     color: #f8f9fa !important;
     cursor: pointer !important;
+}
+
+.dropDownContainer {
+    max-height: 200px !important;
+    overflow: auto;
 }

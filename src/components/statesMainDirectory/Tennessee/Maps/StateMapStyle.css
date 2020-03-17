@@ -54,6 +54,8 @@ text tspan{
 .mapToggleButton {
     width: 100% !important;
     margin-top: 2% !important;
+    border-radius: 0px !important;
+    border: none !important;
 }
 .openToggle {
     color: darkgray !important;
