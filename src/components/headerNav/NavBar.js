@@ -18,6 +18,7 @@ import {
 import LoginFormModal from "./login/LoginFormModal"
 import ProfileIconMenu from "./myProfile/ProfileIconMenu"
 import PrivacyToggle from "./privacyToggle/PrivacyToggle"
+import dbAPI from "../../modules/dbAPI"
 
 const NavBar = (props) => {
 
@@ -29,7 +30,7 @@ const NavBar = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   const checkIfLoggedIn = () => {
-    if(sessionStorage.getItem('sessionToken') === null && privacyMode === false) {
+    if(sessionStorage.getItem('userId') === null && privacyMode === false) {
       console.log(Parse.User.current())
       return(
         <NavItem>
@@ -38,7 +39,9 @@ const NavBar = (props) => {
       ); 
     } else if(privacyMode === false) {
       return (
-        <ProfileIconMenu />
+        <NavItem>
+          <NavLink className="navLink" href="/myprofile"><Button color='primary'>My Profile</Button></NavLink>
+        </NavItem>
       ) 
     } 
   }
