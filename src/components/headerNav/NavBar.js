@@ -16,20 +16,25 @@ import {
   Button
 } from 'reactstrap';
 import LoginFormModal from "./login/LoginFormModal"
+import ProfileIconMenu from "./myProfile/ProfileIconMenu"
 import PrivacyToggle from "./privacyToggle/PrivacyToggle"
+import dbAPI from "../../modules/dbAPI"
 
 const NavBar = (props) => {
+
+  const Parse = require('parse/node');
+
   const [isOpen, setIsOpen] = useState(false);
   const [ privacyMode, changePrivacyMode ] = useState(false)
 
   const toggle = () => setIsOpen(!isOpen);
 
   const checkIfLoggedIn = () => {
-    if(sessionStorage.getItem('user') === null && privacyMode === false) {
-
+    if(sessionStorage.getItem('userId') === null && privacyMode === false) {
+      console.log(Parse.User.current())
       return(
         <NavItem>
-          <LoginFormModal props={props} className="loginPopUp" buttonLabel="Login" changeIsLoggedIn={props.changeIsLoggedIn} /> 
+          <LoginFormModal props={props} changeIsLoggedIn={props.changeIsLoggedIn} /> 
         </NavItem>
       ); 
     } else if(privacyMode === false) {

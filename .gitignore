@@ -24,3 +24,4 @@ yarn-error.log*
 
 # API
 /api 
+/src/modules/dbAPI.js
