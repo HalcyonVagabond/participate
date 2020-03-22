@@ -30,10 +30,10 @@ const TN_FullMap = ({routeToSelectedArea, govLevel, changeGovLevel}) => {
 
     return (
         <section className="fullMapContainer">
-            <Jumbotron className="jumbo">
-                    <TN_MapToolbar selectLevel={selectLevel} govLevel={govLevel}/>
-                    {mapTypeConditional()}    
-            </Jumbotron>
+            <div className="mapContainer jumbo">
+                <TN_MapToolbar selectLevel={selectLevel} govLevel={govLevel}/>
+                {mapTypeConditional()} 
+            </div>   
         </section>
     )
 

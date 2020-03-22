@@ -1,11 +1,11 @@
 import React from "react"
 import { Route, Switch } from "react-router-dom"
 import TN_Home from "./TN_Home"
-import TN_GovernmentTabs from "./state/TN_GovernmentTabsMain"
+import TN_GovernmentTabs from "./state/TN_GovTabsMain"
 import NashvilleMain from "./cities/Nashville/NashvilleMain"
 import InProgressMessage from "../../rerouteMessages/InProgressMessage"
 
-const TN_MainRouter = (props) => {
+const TN_MainRouter = ({govLevel, changeGovLevel}) => {
 
     return (
       <>
@@ -13,18 +13,18 @@ const TN_MainRouter = (props) => {
                  <Route
                     exact
                     path="/tennessee"
-                    render={props => {
+                    render={routerProps => {
                     return (
-                    <TN_Home {...props} />
+                    <TN_Home {...routerProps} govLevel={govLevel} changeGovLevel={changeGovLevel}/>
                     )}}
                 />
                 <Route
                     path="/tennessee/nashville"
-                    render={props => {
+                    render={routerProps => {
                     return (
                         <>
-                        <TN_Home {...props}/>
-                        <NashvilleMain {...props} />
+                        <TN_Home {...routerProps} govLevel={govLevel} changeGovLevel={changeGovLevel}/>
+                        <NashvilleMain {...routerProps} />
                         </>
                         )
                     }}

@@ -1,0 +1,109 @@
+
+.dashboardPageContainer{
+    
+}
+.govAccordion{
+    position: static;
+    width: 96% !important;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+}
+.dropdownIcon{
+    width: 30px !important;
+    transition: 0.5s ease;
+    transform: rotate(90deg);
+    margin-right: 30px;
+
+}
+.removeGov{
+    margin-top: 20px!important;
+}
+.removeGov:hover{
+    color: red !important;
+}
+.stateIcon{
+    max-height: 40px !important;
+    margin-left: 10px;
+    position: static !important;
+    margin-right: 10px;
+}
+.userGovAccordion{
+    display: flex !important;
+    justify-content: space-between !important;
+    transition: 0.5s ease;
+}
+.userGovAccordion.active{
+    transition: 0.5s ease;
+}
+.userGovAccordion h3{
+    color: gray !important;
+}
+.userGovAccordion.active h3{
+    color: black !important;
+}
+.userGovAccordion.active .dropdownIcon{
+    transform: rotate(0deg);
+    transition: 0.5s ease;
+}
+.governmentSelectContainer{
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2vh;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: var(--containerGray);
+    border-radius: 3px;
+    box-shadow: 3px 3px 2px gray;
+}
+.govAccordionContainer{
+    min-height: 20vh;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    background-color: var(--containerGray);
+    border-radius: 3px;
+    box-shadow: 3px 3px 2px gray;
+    margin-top: 10px;
+}
+.governmentSelectContainer h3 {
+    width: 50%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-bottom: 5px;
+    border-bottom: 1px solid gray !important;
+    margin-bottom: 5px !important;
+}
+
+.govAddButton {
+    cursor: pointer !important;
+}
+
+.ui.header:first-child {
+    margin-top: 0.857143em;
+}
+
+/* ************************************************************ */
+/* **********  Begin Styling Gov Individual Content *********** */
+/* ************************************************************ */
+
+
+.govContentContainer{
+    border-radius: 3px;
+    min-height: 20vh;
+    margin: 3%;
+    background-color: var(--containerGray);
+    transition: 0.5s ease;
+}
+
+.govContentContainer.active{
+    transition: 0.5s ease;
+}
+.addContentIcon {
+    margin-left: 10px !important;
+    cursor: pointer;
+}
+.addContentIcon:hover {
+    color: green;
+}

@@ -40,7 +40,7 @@ const NavBar = (props) => {
     } else if(privacyMode === false) {
       return (
         <NavItem>
-          <NavLink className="navLink" href="/myprofile"><Button color='primary'>My Profile</Button></NavLink>
+          <NavLink className="navLink" href="/dashboard"><Button color='primary'>Dashboard</Button></NavLink>
         </NavItem>
       ) 
     } 
@@ -51,7 +51,6 @@ const NavBar = (props) => {
   }, [sessionStorage])
 
   return (
-    <div>
       <Navbar className="navContainer" light expand="md">
         <NavbarBrand href="/"><img id="logo" src={require(`../../images/participateLogo1.png`)} /></NavbarBrand>
         <NavbarToggler onClick={toggle} />
@@ -78,7 +77,6 @@ const NavBar = (props) => {
           </Nav>
         </Collapse>
       </Navbar>
-    </div>
   );
 }
 

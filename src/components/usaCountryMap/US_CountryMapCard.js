@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import "./US_FullMap.css"
 
 const US_CountryMapCard = (props) => {
 

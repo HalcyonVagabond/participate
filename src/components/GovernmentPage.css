@@ -2,15 +2,14 @@
 .tabsMain{
     padding-top: 5px;
     padding-left: 10px !important;
-    background-color: lightgray;
 }
 .tabsMain .nav-link {
     cursor: pointer !important;
-    background-color: white !important;
+    background-color: lightgray !important;
 }
 .tabsMain .active {
     color: white !important;
-    background-color: var(--royalishBlue) !important;
+    background-color: var(--primaryLight) !important;
 }
 .tabContent{
     width: 100%;
