@@ -1,24 +1,34 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import NavBar from "./headerNav/NavBar"
 import BodyRouter from "./BodyRouter";
 import Footer from "./headerNav/Footer"
+import DashboardSidebarMain from "./dashboardSidebar/DashboardSidebarMain"
 import "./headerNav/NavBar.css"
 import "./Participate.css"
+import setColorGovLevel from "../modules/setColorsGovLevel"
 
 
 
 const Participate = (props) => {
   const [ isLoggedIn, changeIsLoggedIn ] = useState(false)
+  const [ govLevel, changeGovLevel ] = useState('city')
+
+
+
+  useEffect(()=>{
+    setColorGovLevel(govLevel)
+  }, [govLevel])
 
   return (
     <>
     <div id="mainContainer" >
-      <NavBar {...props} isLoggedIn={isLoggedIn} changeIsLoggedIn={changeIsLoggedIn} />
+      <NavBar isLoggedIn={isLoggedIn} changeIsLoggedIn={changeIsLoggedIn} govLevel={govLevel} changeGovLevel={changeGovLevel}/>
+      <DashboardSidebarMain setIsActiveUser={changeIsLoggedIn} govLevel={govLevel} changeGovLevel={changeGovLevel}/>
       <div id="bodyWrapper">
-        <BodyRouter {...props} />
+        <BodyRouter govLevel={govLevel} changeGovLevel={changeGovLevel}/>
       </div>
       <div style={{position:'relative'}}>
-      <Footer {...props}/>
+      <Footer govLevel={govLevel} changeGovLevel={changeGovLevel}/>
       </div>
     </div>
     </>

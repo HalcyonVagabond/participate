@@ -1,7 +1,4 @@
-.jumbotron {
-    position: relative !important;
-    box-shadow: 1px 1px 2px 2px lightgray;
-}
+
 
 .fullMapContainer {
     padding-top: 3%;
@@ -14,14 +11,32 @@
     
 }
 
+.mapContainer {
+  
+    max-width: 1000px;
+    padding-top: 40px;
+    margin-right: auto;
+    margin-left: auto;       
+}
+
+#mainContainer{
+    height: 100%;
+}
+.jumbo {
+    box-shadow: 1px 1px 2px 2px lightgray;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    padding: 15px;
+}
 .actualMap {
-    margin-top: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 /* fill doesn't work when each path is wrapped in a link */
 
 #AK,#AL,#AZ,#AR,#CA,#CO,#CT,#DE,#FL,#GA,#HI,#ID,#IL,#IN,#IA,#KS,#KY,#LA,#ME,#MD,#MA,#MI,#MN,#MS,#MO,#MT,#NE,#NV,#NH,#NJ,#NM,#NY,#NC,#ND,#OH,#OK,#OR,#PA,#RI,#SC,#SD,#TN,#TX,#UT,#VT,#VA,#WA,#WV,#WI,#WY,#AS,#GU,#MP,#PR {
-    fill: var(--royalishBlue)
+    fill: var(--primaryDark)
 }
 
 .disabledState:hover{
@@ -46,3 +61,4 @@ svg {
     cursor: pointer;
     fill: var(--bondiBlue) !important; 
 } */
+

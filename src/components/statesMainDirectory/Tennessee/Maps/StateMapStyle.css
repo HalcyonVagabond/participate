@@ -9,16 +9,17 @@ header {
     border-radius: 4px;
     box-shadow: 2px 2px 2px gray;
     text-align: center;
-    background-color: var(--royalishBlue);
+    background-color: var(--primaryDark);
     color: white;
 
 }
 
 .stateMapContainer {
-    padding-top: 60px;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .stateOutline {
@@ -27,7 +28,7 @@ header {
 }
 
 g path {
-    fill: var(--royalishBlue);
+    fill: var(--primaryDark);
 }
 g path:hover {
     fill: var(--bondiBlue)
@@ -59,9 +60,9 @@ text tspan{
 }
 .openToggle {
     color: darkgray !important;
-    background-color: lightgray !important;
+    background-color: var(--primaryLight) !important;
 }
 .closedToggle {
     color: white !important;
-    background-color: var(--royalishBlue) !important;
+    background-color: var(--primaryDark) !important;
 }

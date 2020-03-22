@@ -1,16 +1,13 @@
 import React from "react"
-import { Jumbotron, Button, Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap"
+import { Button, Card, CardHeader, CardImg, CardText, CardBody, CardTitle } from "reactstrap"
 import { Link } from "react-router-dom"
 import "../Participate.css"
 
 export default () => {
     return (
-        <div style={{display: 'flex', justifyContent: 'center'}} className="mapContainer">
-            <Jumbotron style={{ textAlign:'center', width:'75%'}}>
-                <h1>
-                    Work in Progress!
-                </h1>
-                <Card>
+            <div className="mapContainer" style={{ textAlign:'center', width:'75%'}}>
+                <Card style={{position: 'static !important'}}>
+                    <CardHeader ><h1>Work in Progress!</h1></CardHeader>
                     <CardImg top width="100%" src={require( "../../images/statueOfLiberty.jpeg")} alt="Statue of Liberty" />
                     <CardBody>
                         <CardTitle style={{fontWeight: 'bold'}}>Keep exploring. . .</CardTitle>
@@ -21,7 +18,6 @@ export default () => {
                         </Link>
                     </CardBody>
                 </Card>
-            </Jumbotron>
-        </div>
+            </div>
     );
 };

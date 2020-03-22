@@ -15,7 +15,7 @@ import {
   NavbarText,
   Button
 } from 'reactstrap';
-import "./US_MapToolbar.css"
+import "../../mapTemplates/MapToolbar.css"
 
 const US_MapToolbar = (props) => {
   // For collapsed navbar

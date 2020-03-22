@@ -6,13 +6,12 @@ import "../mapTemplates/FullMap.css"
 import convertRegion from "../../modules/convertRegion"
 
 const US_FullMap = (props) => {
-    const [ govLevel, changeGovLevel ] = useState('city')
     const [ stateSelected, chooseStateSelect] = useState('')
 
 
     const selectLevel = (event) => {
         const levelValue = event.target.value
-        return changeGovLevel(levelValue)
+        return props.changeGovLevel(levelValue)
     }
 
     const selectState = (event) => {
@@ -21,18 +20,18 @@ const US_FullMap = (props) => {
     }
 
     useEffect(()=>{
-        console.log(govLevel)
+        console.log(props.routerProps)
         if(stateSelected !== '') {
-            props.history.push(`/${stateSelected}`,govLevel)
+            props.routerProps.history.push(`/${stateSelected}`,props.govLevel)
         }
     },[stateSelected])
 
     return (
         <section className="fullMapContainer">
-            <Jumbotron className="jumbo">
+            <div className="mapContainer jumbo">
                     <US_MapToolbar selectLevel={selectLevel}/>
                     <US_CountryMapCard selectState={selectState}/>
-            </Jumbotron>
+            </div>
         </section>
     )
 

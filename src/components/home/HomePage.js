@@ -12,7 +12,7 @@ const HomePage = (props) => {
             return sessionStorage.setItem('anonymousUser', JSON.stringify({'activeAnonymousUser': true}));
           }
 
-        if (sessionStorage.getItem('anonymousUser') === null && sessionStorage.getItem('user') === null) {
+        if (sessionStorage.getItem('anonymousUser') === null && sessionStorage.getItem('userId') === null) {
             return <WelcomeModal className="welcomeMessage" onClick={setActiveAnonymousUser} setActiveAnonymousUser={setActiveAnonymousUser}/>
         }
     }
@@ -22,7 +22,7 @@ const HomePage = (props) => {
             {welcomeMessageConditional()}
             <div className="mapContainer">
                 <h1 className="mapHeader">Search Governments</h1>
-                <US_FullMap {...props} />
+                <US_FullMap routerProps={props.routerProps} govLevel={props.govLevel} changeGovLevel={props.changeGovLevel}/>
             </div>
         </>
     )
