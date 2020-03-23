@@ -9,9 +9,13 @@
     /* ******* Gov Level Colors ********** */
 
     --cityColor: #713b88;
-    --countyColor: #d2b727; 
+    --cityColorLight: #ac7be0;
+    --countyColor: #c77700; 
+    --countyColorLight: #dccc7b;
     --stateColor: #73b72f;
+    --stateColorLight: #9fc777;
     --federalColor: #4caaad;
+    --federalColorLight: #8ccacc;
 
     /* Coolors Exported Palette - coolors.co/35cfff-74ea56-f6ff00-ffb600-ff4800 */
     --backgroundColorMain: #ac7be0;
@@ -44,9 +48,9 @@
 /* ***** Find NavBar in NavBar.css */
 /* ***** Find Footer in Footer.css*/
 
-/* body{
-    background-color:  !important;
-} */
+body{
+    background-color: #2c2c2d !important;
+}
 
 .stateBanner{
     color: var(--isabelline);
@@ -64,11 +68,11 @@
 
 #bodyWrapper {
     /* position: relative; */
-    min-height: 100vh;
+    min-height: 78vh;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 5vh !important;
+    margin-bottom: 7% !important;
     
 }
 

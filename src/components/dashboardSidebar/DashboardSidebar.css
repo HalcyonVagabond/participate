@@ -51,12 +51,13 @@
     width: 120px;
     color: white;
     background-color: var(--primaryDark);
+    border: 1px solid white;
     border-radius: 0px;
     transition: 0.5s ease;
 }
 #openTasksButton:hover{
-    color: black;
-    background-color: white;
+    color: var(--primaryDark);
+    background-color: lightgray;
     border: 2px solid var(--primaryDark);
     width: 124px;
     transition: 0.5s ease;

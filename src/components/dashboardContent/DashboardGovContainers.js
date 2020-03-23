@@ -24,7 +24,7 @@ const DashboardGovContainers = ({ gov, index, handleClick, activeIndex, setMadeC
     <>
       <Accordion.Title
         id={gov.id}
-        className="userGovAccordion"
+        className={`userGovAccordion ${gov.attributes.level}`}
         active={activeIndex === index}
         index={index}
         onClick={handleClick}

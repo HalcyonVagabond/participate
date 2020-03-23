@@ -37,7 +37,7 @@
     transition: 0.5s ease;
 }
 .userGovAccordion h3{
-    color: gray !important;
+    color: white !important;
 }
 .userGovAccordion.active h3{
     color: black !important;
@@ -45,6 +45,21 @@
 .userGovAccordion.active .dropdownIcon{
     transform: rotate(0deg);
     transition: 0.5s ease;
+}
+.userGovAccordion.city{
+    background-color: var(--cityColorLight) !important;
+}
+.userGovAccordion.consolidated{
+    background-color: var(--cityColorLight) !important;
+}
+.userGovAccordion.county{
+    background-color: var(--countyColorLight) !important;
+}
+.userGovAccordion.state{
+    background-color: var(--stateColorLight) !important;
+}
+.userGovAccordion.federal{
+    background-color: var(--federalColorLight) !important;
 }
 .governmentSelectContainer{
     text-align: center;

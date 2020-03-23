@@ -1,7 +1,7 @@
 @import "../Participate.css";
 
 .footerContainer {
-    position: absolute !important;
+    position: static !important;
     bottom: 0 !important;
     width: 100%;
 }

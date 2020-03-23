@@ -1,28 +1,37 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
 import { Button, Modal, Form, Input } from 'semantic-ui-react'
 
-const SignUpModal = (props) => {
+const GovernmentOfficialForm = (props) => {
 
+    const [inputs, setInputs] = useState()
+
+    const handleFieldChange = (evt) => {
+        const stateToChange = { ...inputs };
+        stateToChange[evt.target.id] = evt.target.value;
+        setInputs(stateToChange);
+
+        if(evt.key === 'Enter'){
+            // handleLogin()
+        }
+      };
 
     return (
-        <Modal id="signup-modal" open={props.modalOpen} trigger={<Button onClick={props.toggleModal}>Sign Up</Button>}>
-            <Modal.Header>Create a New Account!</Modal.Header>
-            <Modal.Content>
                 <Form>
+                    <Form.Header>Elected Official</Form.Header>
                     <Form.Group widths='equal'>
                         <Form.Field
-                            id='first_name'
+                            id='name'
                             control={Input}
-                            label='First name'
-                            placeholder='First name'
-                            onChange={props.handleSignupFieldChange}
+                            label='Name'
+                            placeholder='Name'
+                            onChange={handleFieldChange}
                         />
                         <Form.Field
                             id='last_name'
                             control={Input}
                             label='Last name'
                             placeholder='Last name'
-                            onChange={props.handleSignupFieldChange}
+                            onChange={handleFieldChange}
                         />
                     </Form.Group>
                     <Form.Field
@@ -30,18 +39,18 @@ const SignUpModal = (props) => {
                             control={Input}
                             label='Username'
                             placeholder='Username'
-                            onChange={props.handleSignupFieldChange}
+                            onChange={handleFieldChange}
                         />
                     <Form.Field
                         id='email'
                         control={Input}
                         label='Email'
                         placeholder='email'
-                        onChange={props.handleSignupFieldChange}
+                        onChange={handleFieldChange}
                     />
                     <Form.Field>
                         <label>Enter Password</label>
-                        <Input id="password_1" type='password' onChange={props.handleSignupFieldChange}/>
+                        <Input id="password_1" type='password' onChange={handleFieldChange}/>
                     </Form.Field>
                     <Form.Field>
                         <label>Renter Password</label>
@@ -49,7 +58,7 @@ const SignUpModal = (props) => {
                     </Form.Field>
                     <Form.Field>
                         <label>Image Url</label>
-                        <Input id="image" onChange={props.handleSignupFieldChange} placeholder='image url here'/>
+                        <Input id="image" onChange={handleFieldChange} placeholder='image url here'/>
                     </Form.Field>
                 </Form>
                 <div className="login-form=buttons">
@@ -61,4 +70,4 @@ const SignUpModal = (props) => {
     );
 };
 
-export default SignUpModal;
+export default GovernmentOfficialForm;
