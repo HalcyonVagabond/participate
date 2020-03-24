@@ -16,7 +16,8 @@
     padding: 7px;
     border-radius: 3px;
     background-color: lightgray;
-    border: 2px solid var(--primaryDark);
+    border: 4px solid var(--primaryLight);
+    box-shadow: 0px 0px 0px 2px lightgrey;
 }
 #taskListContainer{
     position: static;
@@ -26,8 +27,9 @@
     height: 80% !important;
 }
 #dashboardSidebarContentContainer{
-    height: 83%;
+    height: 90%;
     margin-top: 5%;
+    overflow: auto;
 }
 
 .taskHeader{
@@ -51,12 +53,13 @@
     width: 120px;
     color: white;
     background-color: var(--primaryDark);
+    border: 1px solid white;
     border-radius: 0px;
     transition: 0.5s ease;
 }
 #openTasksButton:hover{
-    color: black;
-    background-color: white;
+    color: var(--primaryDark);
+    background-color: lightgray;
     border: 2px solid var(--primaryDark);
     width: 124px;
     transition: 0.5s ease;

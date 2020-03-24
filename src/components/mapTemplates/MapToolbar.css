@@ -20,11 +20,21 @@
     background-color: #f8f9fa !important;
 }
 .levelSelect:hover{
-    background-color: #6c757d !important;
     color: #f8f9fa !important;
     cursor: pointer !important;
 }
-
+.levelSelect.city:hover{
+    background-color: var(--cityColor) !important;
+}
+.levelSelect.county:hover{
+    background-color: var(--countyColor) !important;
+}
+.levelSelect.state:hover{
+    background-color: var(--stateColor) !important;
+}
+.levelSelect.federal:hover{
+    background-color: var(--federalColor) !important;
+}
 .dropDownContainer {
     max-height: 200px !important;
     overflow: auto;

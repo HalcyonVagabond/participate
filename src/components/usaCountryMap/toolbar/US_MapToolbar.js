@@ -33,16 +33,16 @@ const US_MapToolbar = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem onClick={props.selectLevel}>
-              <Button className="levelSelect" value="city">City</Button>
+              <Button className="levelSelect city" value="city">City</Button>
             </NavItem>
             <NavItem onClick={props.selectLevel}>
-              <Button className="levelSelect" value="county">County</Button>
+              <Button className="levelSelect county" value="county">County</Button>
             </NavItem>
             <NavItem onClick={props.selectLevel}>
-              <Button className="levelSelect" value="state">State</Button>
+              <Button className="levelSelect state" value="state">State</Button>
             </NavItem>
             <NavItem onClick={props.selectLevel}>
-              <Button className="levelSelect" value="federal">Federal</Button>
+              <Button className="levelSelect federal" value="federal">Federal</Button>
             </NavItem>
             
           </Nav>

@@ -4,12 +4,13 @@
     padding-left: 10px !important;
 }
 .tabsMain .nav-link {
+    box-shadow: inset 1px 1px 1px 1px gray !important;
     cursor: pointer !important;
-    background-color: lightgray !important;
+    background-color: var(--primaryLight) !important;
 }
 .tabsMain .active {
     color: white !important;
-    background-color: var(--primaryLight) !important;
+    background-color: var(--primaryDark) !important;
 }
 .tabContent{
     width: 100%;

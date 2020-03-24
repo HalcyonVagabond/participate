@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { Transition, Button, Icon, Sidebar, Header } from 'semantic-ui-react'
 import "./DashboardSidebar.css"
+import SidebarContentMain from "./dashboardComponents/SidebarContentMain"
 
 
 
-const DashboardSidebarMain = ({setIsActiveUser}) => {
+const DashboardSidebarMain = ({isLoggedIn, govLevel}) => {
     const [isVisible, changeVisible] = useState(false)
     const [isFormVisible, changeIsFormVisible] = useState(false)
     const [isSubmitted, toggleSubmitted] = useState(false)
 
-    const isActiveUser = true
 
     const toggleVisibility = () => {
         changeVisible(!isVisible)
@@ -20,19 +20,7 @@ const DashboardSidebarMain = ({setIsActiveUser}) => {
         changeIsFormVisible(!isFormVisible)
     }
 
-    const checkActiveUser = () => {
-        if (sessionStorage.getItem('userId') !== null){
-            setIsActiveUser(true)
-        } else {
-            setIsActiveUser(false)
-        }
-    }
-
-    useEffect(() => {
-        changeIsFormVisible(false)
-        checkActiveUser()
-    }, [isSubmitted, isActiveUser])
-
+    if(isLoggedIn===true){
         return (
 
             <div className="tasksContainer">
@@ -42,19 +30,9 @@ const DashboardSidebarMain = ({setIsActiveUser}) => {
                     <Transition visible={isVisible} animation='slide left' duration={350}>
                         <section className="tasksSidebar">
                             <Button id="closeTasksButton" icon onClick={toggleVisibility}><Icon name="angle double right" /></Button>
-                            <div id="dashboardSidebarContentContainer">
-                                <Sidebar.Pushable>
-                                    {/* <TaskFormTransition visible={isFormVisible} toggleSubmitted={toggleSubmitted} toggleFormVisibility={toggleFormVisibility} /> */}
-                                    <Sidebar.Pusher >
-                                        <Header className="taskHeader" as='h3' style={{ color: 'white', textAlign: 'right' }} dividing>My Governments</Header>
-                                        {/* <TasksList isSubmitted={isSubmitted} toggleSubmitted={toggleSubmitted} /> */}
-                                    </Sidebar.Pusher>
-                                </Sidebar.Pushable>
-                                <Transition visible={!isFormVisible}>
-                                    <Button icon onClick={toggleFormVisibility} className="createFormButton"><Icon name='write' />Create Task</Button>
-                                </Transition>
+                            <div id="dashboardSidebarContentContainer">                                      
+                                <SidebarContentMain govLevel={govLevel}/>   
                             </div>
-    
                         </section>
                     </Transition>
                 </>
@@ -62,7 +40,9 @@ const DashboardSidebarMain = ({setIsActiveUser}) => {
             </div>
     
         )
-    
+    } else {
+        return null
+    }
     
 }
 

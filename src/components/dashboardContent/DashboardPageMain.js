@@ -15,15 +15,18 @@ const DashboardPageMain = () => {
     const [ activeIndex, setActiveIndex ] = useState(-1)
 
   const handleClick = (e, titleProps) => {
-    const { index } = titleProps
-    const newIndex = activeIndex === index ? -1 : index
-    setActiveIndex(newIndex)
+    if(e.target.className.includes('removeGov') === false){
+        const { index } = titleProps
+        const newIndex = activeIndex === index ? -1 : index
+        setActiveIndex(newIndex) 
+    }
   }
 
     async function getGovernmentsToAdd(){
          await dbAPI.getGovernmentsNotSelected()
-                .then(results=>{
-                    const dropdownGovs = results.map(result=>{
+                .then(governments=>{
+                    const sortedGovernments = governments.sort((a, b) => a.attributes.name.localeCompare(b.attributes.name))
+                    const dropdownGovs = sortedGovernments.map(result=>{
                         const dropdownObj = {
                                         key: result.id, 
                                         value: result.id, 
@@ -41,7 +44,8 @@ const DashboardPageMain = () => {
             if(governments.length === 0){
                 setUserGovernments(null)
             } else {
-                setUserGovernments(governments)
+                const sortedGovernments = governments.sort((a, b) => a.attributes.name.localeCompare(b.attributes.name))
+                setUserGovernments(sortedGovernments)
             }
         })
     }

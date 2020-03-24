@@ -40,3 +40,9 @@
     margin-top: 5% !important;
 }
 
+.navContainer .ui.toggle.checkbox label:after{
+    z-index: 1 !important;
+}
+.navContainer .ui.toggle.checkbox label:before {
+    background: lightgray !important;
+}
