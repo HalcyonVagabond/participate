@@ -1,7 +1,4 @@
 
-.dashboardPageContainer{
-    
-}
 .govAccordion{
     position: static;
     width: 96% !important;
@@ -121,4 +118,10 @@
 }
 .addContentIcon:hover {
     color: green;
+}
+
+.stateVectorContainer{
+    background-size: contain;
+    width: 100%; 
+    height: 100%;
 }

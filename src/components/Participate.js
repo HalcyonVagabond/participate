@@ -13,17 +13,27 @@ const Participate = (props) => {
   const [ isLoggedIn, changeIsLoggedIn ] = useState(false)
   const [ govLevel, changeGovLevel ] = useState('city')
 
-
+  const checkIfLoggedIn = () => {
+    if (sessionStorage.getItem('userId') !== null){
+      changeIsLoggedIn(true)
+    } else {
+      changeIsLoggedIn(false)
+    }
+  }
 
   useEffect(()=>{
     setColorGovLevel(govLevel)
   }, [govLevel])
 
+  useEffect(()=>{
+    checkIfLoggedIn()
+  }, [isLoggedIn])
+
   return (
     <>
     <div id="mainContainer" >
       <NavBar isLoggedIn={isLoggedIn} changeIsLoggedIn={changeIsLoggedIn} govLevel={govLevel} changeGovLevel={changeGovLevel}/>
-      <DashboardSidebarMain setIsActiveUser={changeIsLoggedIn} govLevel={govLevel} changeGovLevel={changeGovLevel}/>
+      <DashboardSidebarMain isLoggedIn={isLoggedIn} govLevel={govLevel} changeGovLevel={changeGovLevel}/>
       <div id="bodyWrapper">
         <BodyRouter govLevel={govLevel} changeGovLevel={changeGovLevel}/>
       </div>
