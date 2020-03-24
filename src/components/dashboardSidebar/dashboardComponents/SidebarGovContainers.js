@@ -1,7 +1,8 @@
 import React, { useState } from "react"
 import { Accordion, Icon, Image, Header, Dropdown, Transition, Label } from 'semantic-ui-react'
+import { Navbar, NavbarBrand, Nav, NavItem, Collapse, NavbarToggler } from "reactstrap"
 import dbAPI from "../../../modules/dbAPI"
-import ContentFormConditional from "./addContent/ContentFormConditional"
+import ContentFormConditional from "./addContent/SidebarContentFormConditional"
 
 const SidebarGovContainers = ({ gov, index, handleClick, activeIndex, setMadeChange, setActiveIndex }) => {
 
