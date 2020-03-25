@@ -5,34 +5,39 @@ import TN_GovernmentTabs from "./state/TN_GovTabsMain"
 import NashvilleMain from "./cities/Nashville/NashvilleMain"
 import InProgressMessage from "../../rerouteMessages/InProgressMessage"
 
-const TN_MainRouter = ({govLevel, changeGovLevel}) => {
+const TN_MainRouter = ({ govLevel, changeGovLevel }) => {
 
     return (
-      <>
+        <>
             <Switch>
-                 <Route
+                <Route
                     exact
                     path="/tennessee"
                     render={routerProps => {
-                    return (
-                    <TN_Home {...routerProps} govLevel={govLevel} changeGovLevel={changeGovLevel}/>
-                    )}}
+                        return (
+                            <>
+                                <h1 className="stateBanner">Tennessee</h1>
+                                <TN_Home {...routerProps} govLevel={govLevel} changeGovLevel={changeGovLevel} />
+                            </>
+                        )
+                    }}
                 />
                 <Route
                     path="/tennessee/nashville"
                     render={routerProps => {
-                    return (
-                        <>
-                        <TN_Home {...routerProps} govLevel={govLevel} changeGovLevel={changeGovLevel}/>
-                        <NashvilleMain {...routerProps} />
-                        </>
+                        return (
+                            <>
+                                <h1 className="stateBanner">Nashville</h1>
+                                <TN_Home {...routerProps} govLevel={govLevel} changeGovLevel={changeGovLevel} />
+                                <NashvilleMain {...routerProps} />
+                            </>
                         )
                     }}
                 />
                 <Route component={InProgressMessage} />
             </Switch>
-           
-     </>
+
+        </>
     );
 };
 

@@ -3,7 +3,7 @@ import { Accordion, Icon, Image, Header, Dropdown, Transition, Label } from 'sem
 import { Navbar, NavbarBrand, Nav, NavItem, NavbarToggler, Collapse } from "reactstrap"
 import dbAPI from "../../modules/dbAPI"
 import ContentFormConditional from "./addContent/ContentFormConditional"
-import returnStateVector from "../../modules/stateVectors/ReturnStateVector"
+import ReturnUserCards from "./displayContent/ReturnUserCards"
 
 const DashboardGovContainers = ({ gov, index, handleClick, activeIndex, setMadeChange, setActiveIndex }) => {
 
@@ -29,22 +29,22 @@ const DashboardGovContainers = ({ gov, index, handleClick, activeIndex, setMadeC
   }
 
   const createContentCards = () => {
-    // console.log(userContent.length)
+    const reactComponentsArray = []
+
     if (userContent.length===0){
       return <h3>Loading Content!</h3>
     } else if (userContent.length > 1 && (userContent.filter(arrays=>arrays.length > 0).length) < 1){
       return <p>You have not added any content for this government. Use the menu above to add content, or use the sidebar while exploring the site.</p>
     }  else {
-        userContent.forEach(classResource=> {
-          if(classResource.length > 0) {
-            classResource.map(object=>{
-              if(object.className==='GovernmentOfficials'){
-                
-              }
+        userContent.forEach(classResourceArray=>{
+          if (classResourceArray.length > 0){
+            classResourceArray.forEach(classObject => {
+                reactComponentsArray.push(<ReturnUserCards key={classObject.id} classObject={classObject}/>)
             })
           }
         })
     }
+    return reactComponentsArray;
   }
   // const stateVector = () => {
   //   const stateV = returnStateVector(gov.attributes.state)
@@ -57,6 +57,10 @@ const DashboardGovContainers = ({ gov, index, handleClick, activeIndex, setMadeC
   useEffect(()=>{
     findUserContent()
   },[])
+
+  useEffect(()=>{
+    console.log(userContent)
+  }, [userContent])
 
   return (
     <>
@@ -81,7 +85,10 @@ const DashboardGovContainers = ({ gov, index, handleClick, activeIndex, setMadeC
           </Nav>
           </Collapse>
         </Navbar>
-        {createContentCards()}
+        <div className='contentCardsContainer'>
+          {createContentCards()}
+        </div>
+        
       </Accordion.Content>
       </Transition>
     </>

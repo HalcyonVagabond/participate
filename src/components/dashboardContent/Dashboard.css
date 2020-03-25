@@ -127,3 +127,9 @@
 .govContentContainerSidebar{
     background-color: var(--bodyBackground) !important;
 }
+
+.contentCardsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
