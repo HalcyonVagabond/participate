@@ -128,8 +128,51 @@
     background-color: var(--bodyBackground) !important;
 }
 
+/* **************************************** */
+/* ****** Content container styling ******* */
+
+
 .contentCardsContainer{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+}
+
+.userContentCard{
+    width: 25% !important;
+    margin: 1vw !important;
+
+}
+
+.cardImage{
+    /* border: 1px solid black; */
+    box-shadow: 1px 1px 0px 0px gray;
+    border-radius: 50px;
+    background-color: white !important;
+}
+
+.cardDescription{
+    color: black !important;
+}
+
+.govOfficialCard{
+    background-color: lightblue !important;
+}
+.departmentCard{
+    background-color: lightgreen!important;
+}
+.committeeCard{
+    background-color: lightpink!important;
+}
+.legislationCard{
+    background-color: lightseagreen!important;
+}
+.eventCard{
+    background-color: lightsalmon!important;
+}
+.electionCard{
+    background-color: lightslategray!important;
+}
+.serviceCard{
+    background-color: lightyellow !important;
 }

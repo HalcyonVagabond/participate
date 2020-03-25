@@ -65,7 +65,7 @@ const DashboardPageMain = () => {
         } else if(userGovernments === null){
             return <h1>You have not added any governments yet . . . Add a government from the list above to get started!</h1>
         } else {
-            return userGovernments.map((gov, index)=><DashboardGovContainers key={index} gov={gov} index={index} handleClick={handleClick} activeIndex={activeIndex} setMadeChange={setMadeChange} setActiveIndex={setActiveIndex}/>)
+            return userGovernments.map((gov, index)=><DashboardGovContainers key={index} gov={gov} index={index} handleClick={handleClick} activeIndex={activeIndex} madeChange={madeChange} setMadeChange={setMadeChange} setActiveIndex={setActiveIndex}/>)
         }
     }
 

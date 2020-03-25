@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from "react"
 import { Accordion, Icon, Image, Header, Dropdown, Transition, Label } from 'semantic-ui-react'
-import { Navbar, NavbarBrand, Nav, NavItem, NavbarToggler, Collapse } from "reactstrap"
 import dbAPI from "../../modules/dbAPI"
 import ContentFormConditional from "./addContent/ContentFormConditional"
 import ReturnUserCards from "./displayContent/ReturnUserCards"
+import GovContainerNav from "./govContainerParts/govContainerNav"
 
-const DashboardGovContainers = ({ gov, index, handleClick, activeIndex, setMadeChange, setActiveIndex }) => {
+const DashboardGovContainers = ({ gov, index, handleClick, activeIndex, madeChange, setMadeChange, setActiveIndex }) => {
 
   const activeUserId = sessionStorage.getItem('userId')
-
-  const [collapsed, setCollapsed] = useState(true);
+  
   const [userContent, setUserContent] = useState([])
 
-  const toggleNavbar = () => setCollapsed(!collapsed);
 
   async function removeGovernment() {
     if (window.confirm(`Are you sure you want to remove ${gov.attributes.name}? Your content will stay intact, but you will not be able to access it unless you add the government again.`)) {
@@ -39,7 +37,7 @@ const DashboardGovContainers = ({ gov, index, handleClick, activeIndex, setMadeC
         userContent.forEach(classResourceArray=>{
           if (classResourceArray.length > 0){
             classResourceArray.forEach(classObject => {
-                reactComponentsArray.push(<ReturnUserCards key={classObject.id} classObject={classObject}/>)
+                reactComponentsArray.push(<ReturnUserCards key={classObject.id} classObject={classObject} setMadeChange={setMadeChange}/>)
             })
           }
         })
@@ -56,7 +54,8 @@ const DashboardGovContainers = ({ gov, index, handleClick, activeIndex, setMadeC
 
   useEffect(()=>{
     findUserContent()
-  },[])
+    setMadeChange(false)
+  },[madeChange])
 
   useEffect(()=>{
     console.log(userContent)
@@ -76,15 +75,7 @@ const DashboardGovContainers = ({ gov, index, handleClick, activeIndex, setMadeC
       </Accordion.Title>
       <Transition animation='zoom' duration={300} visible={activeIndex === index}>
       <Accordion.Content className='govContentContainer' active={activeIndex === index}>
-        <Navbar className='createContentContainer' color="secondary" light expand="md">
-          <NavbarBrand>Tools</NavbarBrand>
-          <NavbarToggler onClick={toggleNavbar} className="mr-2" />
-          <Collapse isOpen={!collapsed} navbar>
-          <Nav navbar>
-          <ContentFormConditional govId={gov.id} setMadeChange={setMadeChange}/>
-          </Nav>
-          </Collapse>
-        </Navbar>
+        <GovContainerNav gov={gov} setMadeChange={setMadeChange}/>
         <div className='contentCardsContainer'>
           {createContentCards()}
         </div>

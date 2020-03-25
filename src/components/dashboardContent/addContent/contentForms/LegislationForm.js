@@ -8,16 +8,12 @@ import { Label } from "reactstrap";
 const LegislationForm = ({ govId, setMadeChange, setPopupOpen }) => {
 
     const activeUserId = sessionStorage.getItem('userId')
-    const [legislationInputs, setLegislationInputs] = useState({ "title": "", "description": "", "governmentId": govId, "userId": activeUserId })
+    const [legislationInputs, setLegislationInputs] = useState({ "title": "", "description": "", "isPassed": false, "governmentId": govId, "userId": activeUserId })
 
     const handleFieldChange = (evt) => {
         const stateToChange = { ...legislationInputs };
         stateToChange[evt.target.id] = evt.target.value;
         setLegislationInputs(stateToChange);
-
-        if (evt.key === 'Enter') {
-            // handleLogin()
-        }
     };
 
     const handleDropDown = (event, data) => {
@@ -56,6 +52,7 @@ const LegislationForm = ({ govId, setMadeChange, setPopupOpen }) => {
     async function submitOfficial() {
         await dbAPI.createNewObjectByClassName('Legislation', legislationInputs)
             .then(()=>{
+                console.log(legislationInputs)
                 setPopupOpen(false)
                 setMadeChange(true)
             })
