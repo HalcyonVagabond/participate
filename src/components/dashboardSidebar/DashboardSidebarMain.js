@@ -31,7 +31,7 @@ const DashboardSidebarMain = ({isLoggedIn, govLevel}) => {
                     <Transition visible={isVisible} animation='slide left' duration={350}>
                         <section className="tasksSidebar">
                             <Button id="closeTasksButton" icon onClick={toggleVisibility}><Icon name="angle double right" /></Button>
-                            <Link to="/dashboard"><Button className='dashboardLinkButton'>My Dashboard</Button></Link>
+                            <Link to="/dashboard"><Button className='dashboardLinkButton' onClick={toggleVisibility}>My Dashboard</Button></Link>
                             <div id="dashboardSidebarContentContainer">                                      
                                 <SidebarContentMain govLevel={govLevel}/>   
                             </div>

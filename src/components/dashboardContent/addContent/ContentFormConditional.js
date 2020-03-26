@@ -7,7 +7,6 @@ import CommitteeForm from "./contentForms/CommitteeForm"
 import LegislationForm from "./contentForms/LegislationForm"
 import EventForm from "./contentForms/EventForm"
 import ElectionForm from "./contentForms/ElectionForm"
-import NoteForm from "./contentForms/NoteForm"
 import ServicesForm from "./contentForms/ServiceForm"
 
 const ContentFormConditional = ({ govId, setMadeChange }) => {
