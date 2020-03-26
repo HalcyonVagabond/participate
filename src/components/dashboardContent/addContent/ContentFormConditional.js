@@ -7,7 +7,6 @@ import CommitteeForm from "./contentForms/CommitteeForm"
 import LegislationForm from "./contentForms/LegislationForm"
 import EventForm from "./contentForms/EventForm"
 import ElectionForm from "./contentForms/ElectionForm"
-import NoteForm from "./contentForms/NoteForm"
 import ServicesForm from "./contentForms/ServiceForm"
 
 const ContentFormConditional = ({ govId, setMadeChange }) => {
@@ -44,13 +43,14 @@ const ContentFormConditional = ({ govId, setMadeChange }) => {
     }
 
     return (
-        <>
-            <Label>Add Content</Label>
+        <div>
+            <Label style={{width: '100px'}} >Add Content</Label>
             <Dropdown
                 className='createContent'
                 labeled={true}
                 placeholder='Select Info Type'
                 selection
+                style={{width: '20%'}}
                 options={formClassNames}
                 onChange={handleFormSelectDropdown}
             />
@@ -63,7 +63,7 @@ const ContentFormConditional = ({ govId, setMadeChange }) => {
                 >
                     {returnSelectedForm()}
                 </Popup>
-        </>
+        </div>
     );
 };
 

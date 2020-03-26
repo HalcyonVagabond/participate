@@ -35,7 +35,6 @@ const TN_Home = ({location, history, govLevel, changeGovLevel}) => {
         <>
           <Button className={`mapToggleButton ${toggleGovButtonColor()}`}  onClick={toggleGov} style={{ marginBottom: '1rem' }}>Toggle Tennessee Government</Button>
           <Collapse isOpen={isGovOpen}>
-              <h1 className="stateBanner">Tennessee</h1>
               <TN_GovTabsMain />
           </Collapse>
 

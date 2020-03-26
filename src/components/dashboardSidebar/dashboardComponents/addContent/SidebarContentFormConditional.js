@@ -46,15 +46,7 @@ const ContentFormConditional = ({ govId, setMadeChange }) => {
     return (
         <>
             <Label>Add Content</Label>
-            <Dropdown
-                className='createContent'
-                labeled={true}
-                placeholder='Select Info Type'
-                selection
-                options={formClassNames}
-                onChange={handleFormSelectDropdown}
-            />
-                <Popup
+            <Popup
                     trigger={<Icon className='addContentIcon' name='plus' />}
                     on='click'
                     open={isPopupOpen}
@@ -63,6 +55,14 @@ const ContentFormConditional = ({ govId, setMadeChange }) => {
                 >
                     {returnSelectedForm()}
                 </Popup>
+            <Dropdown
+                className='createContent'
+                labeled={true}
+                placeholder='Select Info Type'
+                selection
+                options={formClassNames}
+                onChange={handleFormSelectDropdown}
+            />
         </>
     );
 };

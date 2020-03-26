@@ -74,48 +74,13 @@
     background-color: white;
     transition: 0.5s ease;
 }
-
-.completed{
-    text-decoration: white line-through;
-    opacity: 0.6;
-}
-
-.checkMark {
-    color: limegreen;
-    font-size: 15px !important;
+.dashboardLinkButton{
+    background-color: var(--primaryLight) !important;
     transition: 0.5s ease;
+    margin-left: 27px !important;
 }
-.checkMark:hover {
-    color: lime;
-    font-size: 20px !important;
-    margin-left: -10px !important;
-    cursor: pointer;
+.dashboardLinkButton:hover{
+    color: white !important;
+    background-color: var(--primaryDark) !important;
     transition: 0.5s ease;
-}
-.xMark {
-    color: #ce1414;
-    font-size: 15px !important;
-    transition: 0.5s ease;
-}
-.xMark:hover {
-    color: #ff3131;
-    font-size: 20px !important;
-    cursor: pointer;
-    transition: 0.5s ease;
-}
-.deleteTask {
-    color: gray;
-    padding-right: 20px !important;
-}
-.deleteTask:hover{
-    color: lightgray;
-    cursor: pointer;
-}
-.createFormButton{
-    position: absolute;
-    margin-left: 67px !important;
-    bottom: 3vh !important;
-}
-#formInputs {
-    color: white;
 }

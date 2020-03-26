@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Transition, Button, Icon, Sidebar, Header } from 'semantic-ui-react'
+import {Link} from "react-router-dom"
+import { Transition, Button, Icon, Sidebar, Header, } from 'semantic-ui-react'
 import "./DashboardSidebar.css"
 import SidebarContentMain from "./dashboardComponents/SidebarContentMain"
 
@@ -30,6 +31,7 @@ const DashboardSidebarMain = ({isLoggedIn, govLevel}) => {
                     <Transition visible={isVisible} animation='slide left' duration={350}>
                         <section className="tasksSidebar">
                             <Button id="closeTasksButton" icon onClick={toggleVisibility}><Icon name="angle double right" /></Button>
+                            <Link to="/dashboard"><Button className='dashboardLinkButton' onClick={toggleVisibility}>My Dashboard</Button></Link>
                             <div id="dashboardSidebarContentContainer">                                      
                                 <SidebarContentMain govLevel={govLevel}/>   
                             </div>
