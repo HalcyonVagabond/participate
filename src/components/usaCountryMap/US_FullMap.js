@@ -15,8 +15,11 @@ const US_FullMap = (props) => {
     }
 
     const selectState = (event) => {
-        const clickedState = convertRegion.convertForRoute(event.target.id, 'toName')
+        if(event.target.id.length > 0 ) {
+            const clickedState = convertRegion.convertForRoute(event.target.id, 'toName')
         return chooseStateSelect(clickedState)
+        }
+
     }
 
     useEffect(()=>{
@@ -29,7 +32,7 @@ const US_FullMap = (props) => {
     return (
         <section className="fullMapContainer">
             <div className="mapContainer jumbo">
-                    <US_MapToolbar selectLevel={selectLevel}/>
+                    <US_MapToolbar selectLevel={selectLevel} chooseStateSelect={chooseStateSelect}/>
                     <US_CountryMapCard selectState={selectState}/>
             </div>
         </section>

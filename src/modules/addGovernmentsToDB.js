@@ -1,11 +1,11 @@
 const Parse = require('parse/node');
 
 var states = [
-    // ['Alabama', 'AL'],
+    ['Alabama', 'AL'],
     ['Alaska', 'AK'],
     ['Arizona', 'AZ'],
     ['Arkansas', 'AR'],
-    // ['California', 'CA'],
+    ['California', 'CA'],
     ['Colorado', 'CO'],
     ['Connecticut', 'CT'],
     ['Delaware', 'DE'],
@@ -17,7 +17,7 @@ var states = [
     ['Indiana', 'IN'],
     ['Iowa', 'IA'],
     ['Kansas', 'KS'],
-    // ['Kentucky', 'KY'],
+    ['Kentucky', 'KY'],
     ['Louisiana', 'LA'],
     ['Maine', 'ME'],
     ['Maryland', 'MD'],
@@ -32,7 +32,7 @@ var states = [
     ['New Hampshire', 'NH'],
     ['New Jersey', 'NJ'],
     ['New Mexico', 'NM'],
-    // ['New York', 'NY'],
+    ['New York', 'NY'],
     ['North Carolina', 'NC'],
     ['North Dakota', 'ND'],
     ['Ohio', 'OH'],
@@ -42,7 +42,7 @@ var states = [
     ['Rhode Island', 'RI'],
     ['South Carolina', 'SC'],
     ['South Dakota', 'SD'],
-    // ['Tennessee', 'TN'],
+    ['Tennessee', 'TN'],
     ['Texas', 'TX'],
     ['Utah', 'UT'],
     ['Vermont', 'VT'],
@@ -53,16 +53,10 @@ var states = [
     ['Wyoming', 'WY'],
 ];
 
-const oopsStates = [
-    ['Alabama', 'AL'],
-    ['California', 'CA'],
-    ['Kentucky', 'KY'],
-    ['New York', 'NY'],
-    ['Tennessee', 'TN'],
-]
 
-const stateGovObjects = oopsStates.map(state=>({name: `${state[0]} U.S. Federal`, level: 'federal', state: state[0], websiteUrl: ""}))
 
+const stateGovObjects = states.map(state=>({name: `${state[0]} U.S. Federal`, level: 'federal', state: state[0], websiteUrl: ""}))
+const searchStateDropdownObjects = states.map(state=>({value: sate[0].toLowerCase().split(' ').join('-'), text: state[0]}))
 
 Parse.serverURL = 'https://parseapi.back4app.com'; // This is your Server URL
 Parse.initialize(
@@ -80,4 +74,4 @@ async function createNewGovernment(resourceObject){
     await newResource.save()
 }
 
-stateGovObjects.forEach(object => createNewGovernment(object))
+console.log()

@@ -66,10 +66,6 @@ const DashboardGovContainers = ({ gov, index, handleClick, activeIndex, madeChan
     setMadeChange(false)
   },[madeChange])
 
-  useEffect(()=>{
-    console.log(filteredContent)
-  }, [filteredContent])
-
   return (
     <>
       <Accordion.Title

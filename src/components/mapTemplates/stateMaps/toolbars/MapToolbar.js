@@ -9,7 +9,7 @@ import {
   Button
 } from 'reactstrap';
 import "../../../../usaCountryMap/toolbar/US_MapToolbar.css"
-import TN_DropDowns from "./TN_DropDowns"
+// import TN_DropDowns from "./TN_DropDowns"
 
 const TN_MapToolbar = (props) => {
   // For collapsed navbar
@@ -42,7 +42,7 @@ const TN_MapToolbar = (props) => {
           </Nav>
           <Nav className="mr-auto" navbar>
           
-          <TN_DropDowns govLevel={props.govLevel} />
+          {/* <TN_DropDowns govLevel={props.govLevel} /> */}
           </Nav>
         </Collapse>
       </Navbar>

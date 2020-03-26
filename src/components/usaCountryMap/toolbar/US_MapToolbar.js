@@ -16,14 +16,13 @@ import {
   Button
 } from 'reactstrap';
 import "../../mapTemplates/MapToolbar.css"
+import SelectStateDropdown from "./SelectStateDropdown"
 
-const US_MapToolbar = (props) => {
+const US_MapToolbar = ({selectLevel, chooseStateSelect}) => {
   // For collapsed navbar
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 // for dropdown state menu
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const toggle2 = () => setDropdownOpen(prevState => !prevState);
 
   return (
     <div className="mapToolbar" id="countryMapToolbar">
@@ -32,45 +31,23 @@ const US_MapToolbar = (props) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
-            <NavItem onClick={props.selectLevel}>
+            <NavItem onClick={selectLevel}>
               <Button className="levelSelect city" value="city">City</Button>
             </NavItem>
-            <NavItem onClick={props.selectLevel}>
+            <NavItem onClick={selectLevel}>
               <Button className="levelSelect county" value="county">County</Button>
             </NavItem>
-            <NavItem onClick={props.selectLevel}>
+            <NavItem onClick={selectLevel}>
               <Button className="levelSelect state" value="state">State</Button>
             </NavItem>
-            <NavItem onClick={props.selectLevel}>
+            <NavItem onClick={selectLevel}>
               <Button className="levelSelect federal" value="federal">Federal</Button>
             </NavItem>
             
           </Nav>
           <Nav className="mr-auto" navbar>
-          <Dropdown isOpen={dropdownOpen} toggle={toggle2} nav inNavbar>
-              <DropdownToggle nav caret>
-                Select State
-              </DropdownToggle>
-              <DropdownMenu right className="dropDownContainer">
-                <DropdownItem>
-                  Tennessee
-                </DropdownItem>
-                <DropdownItem>
-                  Kentucky
-                </DropdownItem>
-                <DropdownItem>
-                  New York
-                </DropdownItem>
-                <DropdownItem>
-                  California
-                </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>
-                  Reset
-                </DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          <Button>Search</Button>
+          <SelectStateDropdown chooseStateSelect={chooseStateSelect}/>
+      
           </Nav>
         </Collapse>
       </Navbar>

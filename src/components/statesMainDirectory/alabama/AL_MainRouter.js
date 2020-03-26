@@ -2,6 +2,7 @@ import React from "react"
 import { Route, Switch } from "react-router-dom"
 import AL_CountiesMap  from "./maps/AL_CountiesMap"
 import InProgressMessage from "../../rerouteMessages/InProgressMessage"
+import AL_FullMap from "./maps/AL_FullMap";
 
 const AL_MainRouter = (props) => {
 
@@ -14,7 +15,7 @@ const AL_MainRouter = (props) => {
                     render={props => {
                     return (
                     <>
-                    <AL_CountiesMap {...props} />
+                    <AL_FullMap />
                     </>
                     )}}
                 />
