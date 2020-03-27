@@ -21,7 +21,7 @@ const DashboardSidebarMain = ({isLoggedIn, govLevel}) => {
         changeIsFormVisible(!isFormVisible)
     }
 
-    if(isLoggedIn===true){
+    if(isLoggedIn===true && window.location.pathname !== '/dashboard'){
         return (
 
             <div className="tasksContainer">

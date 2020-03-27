@@ -60,7 +60,7 @@ const LegislationForm = ({ govId, setMadeChange, setPopupOpen }) => {
 
     return (
         <>
-            <Header>Add Committee</Header>
+            <Header>Add Legislation</Header>
                 <Input
                     id='title'
                     placeholder='Title'
@@ -89,9 +89,7 @@ const LegislationForm = ({ govId, setMadeChange, setPopupOpen }) => {
                     placeholder='Contact Info'
                     onChange={handleFieldChange}
                 />
-            <div className="login-form=buttons">
                 <Button onClick={submitOfficial}>Create</Button>
-            </div>
         </>
 
     );

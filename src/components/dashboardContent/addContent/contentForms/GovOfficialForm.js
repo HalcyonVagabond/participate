@@ -13,16 +13,12 @@ const GovernmentOfficialForm = ({ govId, setMadeChange, setPopupOpen }) => {
         stateToChange[evt.target.id] = evt.target.value;
         setOfficialInputs(stateToChange);
 
-        if (evt.key === 'Enter') {
-            // handleLogin()
-        }
     };
 
     const handleDropDown = (event, data) => {
         const stateToChange = { ...officialInputs };
         stateToChange[data.id] = data.value;
         setOfficialInputs(stateToChange);
-        console.log(data)
     }
 
     async function submitOfficial() {

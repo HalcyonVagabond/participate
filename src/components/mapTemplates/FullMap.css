@@ -16,12 +16,10 @@
     max-width: 1000px;
     padding-top: 40px;
     margin-right: auto;
-    margin-left: auto;       
+    margin-left: auto; 
+    text-align: center;      
 }
 
-#mainContainer{
-    height: 100%;
-}
 .jumbo {
     box-shadow: 1px 1px 2px 2px lightgray;
     background-color: #e9ecef;

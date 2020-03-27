@@ -56,9 +56,8 @@ const DepartmentForm = ({ govId, setMadeChange, setPopupOpen }) => {
                     placeholder='Notes'
                     onChange={handleFieldChange}
                 />
-            <div className="">
+        
                 <Button onClick={submitDepartment}>Create</Button>
-            </div>
         </>
 
     );

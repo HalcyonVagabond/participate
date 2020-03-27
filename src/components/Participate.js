@@ -27,7 +27,7 @@ const Participate = (props) => {
 
   useEffect(()=>{
     checkIfLoggedIn()
-  }, [isLoggedIn])
+  }, [sessionStorage.getItem('user')])
 
   return (
     <>

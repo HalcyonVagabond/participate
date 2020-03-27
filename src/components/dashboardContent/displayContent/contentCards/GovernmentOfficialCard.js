@@ -1,6 +1,7 @@
 import React from "react"
 import { Card, Icon, Image } from "semantic-ui-react"
 import dbAPI from "../../../../modules/dbAPI"
+import EditGovOfficialModal from "../../editContent/EditGovOfficial"
 
 const GovernmentOfficialCard = ({ govOfficialObj, setMadeChange }) => {
     const fistName = govOfficialObj.attributes.firstName
@@ -38,6 +39,7 @@ const GovernmentOfficialCard = ({ govOfficialObj, setMadeChange }) => {
       </Card.Description>
             </Card.Content>
             <Card.Content extra>
+                <EditGovOfficialModal govOfficialObj={govOfficialObj} setMadeChange={setMadeChange} />
                 <a onClick={deleteCard}>
                     <Icon name='trash alternate'/>
                     Delete

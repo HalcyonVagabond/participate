@@ -1,6 +1,7 @@
 import React from "react"
 import { Card, Icon, Image, Popup, Button } from "semantic-ui-react"
 import dbAPI from "../../../../modules/dbAPI"
+import EditDepartment from "../../editContent/EditDepartment"
 
 const DepartmentCard = ({ departmentObj, setMadeChange }) => {
     const name = departmentObj.attributes.name
@@ -43,6 +44,7 @@ const DepartmentCard = ({ departmentObj, setMadeChange }) => {
                     Address: {address} 
                     </p>
                 </Popup>
+                <EditDepartment departmentObj={departmentObj} setMadeChange={setMadeChange}/>
                 <a onClick={deleteCard}>
                     <Icon name='trash alternate'/>
                     Delete

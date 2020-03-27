@@ -2,6 +2,7 @@ import React from "react"
 import { Card, Icon, Image, Popup, Button } from "semantic-ui-react"
 import dbAPI from "../../../../modules/dbAPI"
 import moment from "moment"
+import EditLegislation from "../../editContent/EditLegislation"
 
 const legislationCard = ({ legislationObj, setMadeChange }) => {
     const title = legislationObj.attributes.title
@@ -64,6 +65,7 @@ const legislationCard = ({ legislationObj, setMadeChange }) => {
                     {contactInfo}
                     </p>
                 </Popup>
+                <EditLegislation legislationObj={legislationObj} setMadeChange={setMadeChange}/>
                 <a onClick={deleteCard}>
                     <Icon name='trash alternate'/>
                     Delete

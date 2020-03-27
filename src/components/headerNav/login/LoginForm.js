@@ -14,17 +14,16 @@ const LoginForm = ({toggle, changeIsLoggedIn}) => {
         setCredentials(stateToChange);
     };
 
-    const handleLogin = (e) => {
+    async function handleLogin(e) {
         e.preventDefault();
         toggle()
-        console.log(credentials)
         // sessionStorage.clear()
         // sessionStorage.setItem(
         //   'user',
         //   JSON.stringify(credentials)
         // );
-        dbAPI.loginUser(credentials)
-        changeIsLoggedIn(true)
+        await dbAPI.loginUser(credentials)
+          .then(()=>changeIsLoggedIn(true))
         // props.history.push('/')
       };
 

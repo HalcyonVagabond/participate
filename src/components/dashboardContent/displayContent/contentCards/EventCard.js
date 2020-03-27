@@ -2,6 +2,7 @@ import React from "react"
 import { Card, Icon, Image, Popup, Button } from "semantic-ui-react"
 import dbAPI from "../../../../modules/dbAPI"
 import moment from "moment"
+import EditEvent from "../../editContent/EditEvents"
 
 const eventCard = ({ eventObj, setMadeChange }) => {
     const title = eventObj.attributes.title
@@ -34,15 +35,7 @@ const eventCard = ({ eventObj, setMadeChange }) => {
       </Card.Description>
             </Card.Content>
             <Card.Content extra>
-                {/* <Popup wide trigger={<Button content='Contact Info' />} on='click'>
-                    <p>
-                    Phone: {phone}
-                    <br/>
-                    Email: {email}
-                    <br/>
-                    Address: {address} 
-                    </p>
-                </Popup> */}
+                <EditEvent eventObj={eventObj} setMadeChange={setMadeChange} />
                 <a onClick={deleteCard}>
                     <Icon name='trash alternate'/>
                     Delete

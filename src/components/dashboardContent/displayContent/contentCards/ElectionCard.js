@@ -1,6 +1,7 @@
 import React from "react"
 import { Card, Icon, Image, Popup, Button } from "semantic-ui-react"
 import dbAPI from "../../../../modules/dbAPI"
+import EditElection from "../../editContent/EditElections"
 
 const ElectionCard = ({ electionObj, setMadeChange }) => {
     const name = electionObj.attributes.name
@@ -34,15 +35,7 @@ const ElectionCard = ({ electionObj, setMadeChange }) => {
       </Card.Description>
             </Card.Content>
             <Card.Content extra>
-                {/* <Popup wide trigger={<Button content='Contact Info' />} on='click'>
-                    <p>
-                    Phone: {phone}
-                    <br/>
-                    Email: {email}
-                    <br/>
-                    Address: {address} 
-                    </p>
-                </Popup> */}
+                <EditElection electionObj={electionObj} setMadeChange={setMadeChange} />
                 <a onClick={deleteCard}>
                     <Icon name='trash alternate'/>
                     Delete

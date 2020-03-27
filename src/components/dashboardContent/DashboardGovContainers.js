@@ -34,7 +34,7 @@ const DashboardGovContainers = ({ gov, index, handleClick, activeIndex, madeChan
 
     if (userContent===null){
       return <h3>Loading Content!</h3>
-    } else if (userContent.length > 1 && (userContent.filter(arrays=>arrays.length > 0).length) < 1){
+    } else if (userContent.length > 1 && (userContent.filter(arrays=>arrays.length > 0).length)===0){
       return <p>You have not added any content for this government. Use the menu above to add content, or use the sidebar while exploring the site.</p>
     } else if ( filteredContent.length === 0 ) {
       return <p>You haven't saved anything for this resource. Create new content or try changing the filter.</p>
@@ -42,7 +42,12 @@ const DashboardGovContainers = ({ gov, index, handleClick, activeIndex, madeChan
         filteredContent.forEach(classResourceArray=>{
           if (classResourceArray.length > 0){
             classResourceArray.forEach(classObject => {
-                reactComponentsArray.push(<ReturnUserCards key={classObject.id} classObject={classObject} setMadeChange={setMadeChange}/>)
+                reactComponentsArray.push(
+                    <ReturnUserCards 
+                      key={classObject.id} 
+                      classObject={classObject} 
+                      setMadeChange={setMadeChange}
+                      />)
             })
           }
         })
@@ -53,22 +58,11 @@ const DashboardGovContainers = ({ gov, index, handleClick, activeIndex, madeChan
     }
     return reactComponentsArray;
   }
-  // const stateVector = () => {
-  //   const stateV = returnStateVector(gov.attributes.state)
-  //   var b = document.getElementById(stateV.props.children.props.children.props.id).getBBox();
-  //     console.log(b.x+" "+b.y+" "+b.width+" "+b.height);
-  //     console.log(stateV.props.children.props.children.props.id)
-  //     return stateV
-  // }
 
   useEffect(()=>{
     findUserContent()
     setMadeChange(false)
   },[madeChange])
-
-  useEffect(()=>{
-    console.log(filteredContent)
-  }, [filteredContent])
 
   return (
     <>

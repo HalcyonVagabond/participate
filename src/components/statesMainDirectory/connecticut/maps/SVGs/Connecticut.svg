@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg2"
+   height="135.89334"
+   width="166.18668"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
+   sodipodi:docname="Connecticut Democratic presidential primary election results by county, 2020.svg"
+   inkscape:export-filename="C:\Users\James.James-PC\Documents\politics\elections\States\CT\President\CTpres2012.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1440"
+     inkscape:window-height="814"
+     id="namedview6561"
+     showgrid="false"
+     inkscape:zoom="2.360787"
+     inkscape:cx="71.147685"
+     inkscape:cy="89.912269"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="county-group" />
+  <defs
+     id="defs3232" />
+  <metadata
+     id="metadata7">image/svg+xml2013-01-30U.S. Census Bureau, Abe.suleiman, Lokal_Profilhttps://commons.wikimedia.org/wiki/File:Usa_counties_large.svgimage/svg+xml<rdf:RDF>
+  <cc:Work
+     rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type
+       rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+    <dc:title />
+  </cc:Work>
+</rdf:RDF>
+</metadata>
+  <style
+     id="style5"
+     type="text/css">/*
+   * Below are Cascading Style Sheet (CSS) definitions in use in this file,
+   * which allow easily changing how counties are displayed.
+   *
+   * To e.g. colour two counties red simply go to the CSS insertion point and add:
+   * .c02185, c02188 {fill:red}
+   *
+   *
+   */
+  
+.counties {fill:#00539f;fill-rule:nonzero;stroke:#000000;stroke-width:0.178287;}
+.State_Lines {fill:none;stroke:#ffffff;stroke-width:0.89143497;}
+.separator {fill:none;stroke:#a9a9a9;stroke-width:2.3177309;}
+
+/*CSS insertion point*/</style>
+  <g
+     id="g7"
+     transform="translate(0,-746.07243)">
+    <title
+       id="title8">background</title>
+    <rect
+       id="canvas_background"
+       height="884.09906"
+       width="1393.0756"
+       y="-1.0666667"
+       x="-1.0666667"
+       style="fill:none;stroke-width:1.06666672" />
+  </g>
+  <g
+     id="g12"
+     transform="translate(0,-746.07243)">
+    <title
+       id="title12">Layer 1</title>
+    <g
+       transform="matrix(1.3193614,0,0,1.3193614,-1.6308932,0.04865171)"
+       class="counties"
+       id="county-group"
+       style="fill:#00539f;fill-rule:nonzero;stroke:#000000;stroke-width:0.178287">
+      <path
+         id="Hartford, CT"
+         class="c09003"
+         d="m 48.599388,581.43333 10.977895,0.001 0.06759,2.65873 2.900539,-0.16282 0.853533,-2.53099 13.742345,0.009 1.072717,5.89627 -1.744023,0.0484 0.102902,5.76372 1.100291,0.0147 -0.39556,3.35995 1.746814,-0.25412 2.046469,9.18684 1.039089,0.71635 1.263787,2.51498 0.08911,0.40006 -0.09382,1.57733 -3.20312,1.27727 -2.320567,-4.24257 -7.038771,0.54284 -4.935675,0.9195 -2.149805,3.32709 -10.424892,1.16195 -0.470079,-5.41418 -2.43954,0.28869 -2.06762,-10.73631 3.884244,-0.5846 3.391872,-11.33803 -8.138123,0.53123 1.143032,-4.93437"
+         style="fill:#00539f;fill-opacity:1;stroke:#ffffff;stroke-width:0.55931795"
+         inkscape:connector-curvature="0" />
+      <path
+         id="Litchfield, CT"
+         class="c09005"
+         d="m 46.048069,581.41594 2.551285,0.0207 -1.142999,4.93437 8.138089,-0.5312 -3.391838,11.33807 -3.884277,0.58456 2.067686,10.73634 -7.52109,5.1285 -2.417447,0.52735 0.365025,2.97003 -9.668474,0.6267 -0.416679,0.8347 -0.02354,0.56922 0.366137,0.51394 0.607211,0.53323 -0.143589,0.12086 -0.787892,-0.16104 -2.347838,-1.22048 -0.843916,-1.44363 -2.875756,1.19823 -0.806623,-2.08567 -0.286841,-0.85253 -0.64733,-1.72908 -1.491378,-5.98807 -0.343304,-0.5754 -1.452069,-0.59807 1.581132,-25.96349 24.824216,0.48986"
+         style="fill:#00539f;fill-opacity:1;stroke:#ffffff;stroke-width:0.55931795"
+         inkscape:connector-curvature="0" />
+      <path
+         id="Fairfield, CT"
+         class="c09001"
+         d="m 18.977636,616.32075 0.665084,-9.43101 1.452069,0.59801 0.34327,0.57543 1.491413,5.98802 0.647295,1.72913 0.286844,0.85253 0.806553,2.08567 2.875757,-1.19823 0.84395,1.44366 2.347838,1.22048 0.787858,0.16134 0.143588,-0.12086 1.86895,1.08331 4.083218,2.16519 8.151976,8.02864 -1.046487,3.14112 -1.053281,1.23049 -0.277426,0.50243 -0.679275,3.15015 0.07365,0.3428 0.767009,0.6712 -4.035231,0.11789 -11.218838,4.31712 -15.677037,6.97899 -0.465909,0.46982 -0.353593,0.67023 -4.1018138,-7.79148 5.0812148,-2.8019 9.208386,-5.13134 -4.132384,-5.30559 0.328205,-4.81262 0.78026,-10.90475"
+         style="fill:#00539f;fill-opacity:1;stroke:#ffffff;stroke-width:0.55931795"
+         inkscape:connector-curvature="0" />
+      <path
+         id="New Haven, CT"
+         class="c09009"
+         d="m 63.720426,612.45908 0.539755,5.49848 -0.22665,4.61051 3.251913,-0.1965 2.267334,-0.45871 0.669254,0.60008 1.795943,2.90247 4.651893,8.44529 -2.856151,-0.73529 -1.943097,0.0118 -8.114247,0.44291 -5.201198,0.76283 -2.668105,-0.20034 -0.860325,-1.55627 -0.489752,0.0801 -8.178003,5.18936 -1.155308,0.8789 -1.484687,1.4819 -0.139217,0.24201 -0.01681,0.0571 -0.767009,-0.6712 -0.07331,-0.34279 0.679309,-3.15016 0.277427,-0.50242 1.05328,-1.23046 1.046555,-3.14114 -8.152043,-8.02865 -4.083185,-2.16516 -1.868914,-1.08333 -0.60728,-0.5333 -0.366102,-0.51392 0.02354,-0.56922 0.416713,-0.83472 9.66844,-0.62667 -0.364992,-2.97006 2.417481,-0.52733 7.52099,-5.12852 2.43954,-0.28869 0.470112,5.41424 10.424893,-1.16197"
+         style="fill:#00539f;fill-opacity:1;stroke:#ffffff;stroke-width:0.55931795"
+         inkscape:connector-curvature="0" />
+      <path
+         id="Middlesex, CT"
+         class="c09007"
+         d="m 80.165178,611.91226 2.555924,3.11197 5.926812,-0.3792 0.993255,6.32694 -6.728492,0.99503 5.160341,10.2903 -11.402847,1.60346 -4.651893,-8.44528 -1.795943,-2.90249 -0.669221,-0.60007 -2.267367,0.45869 -3.251778,0.1959 0.225304,-4.61004 -0.53878,-5.4983 2.149839,-3.32706 4.935641,-0.9195 7.038773,-0.54287 2.320498,4.2426"
+         style="fill:#00539f;fill-opacity:1;stroke:#ffffff;stroke-width:0.55931795"
+         inkscape:connector-curvature="0" />
+      <path
+         id="New London, CT"
+         class="c09011"
+         d="m 119.11311,610.34853 0.10829,11.87601 -0.31039,0.14745 -0.86777,-0.18675 -1.1711,0.83074 -0.083,0.93033 0.48764,0.87645 -0.21622,1.30174 0.44939,0.89707 -0.0353,0.64962 -1.00005,0.70829 -0.42196,0.14302 -0.48574,0.50037 -1.49405,-0.93578 -3.4839,0.18439 -2.44929,1.02217 -1.34866,0.5622 -4.31993,-0.45331 -1.58079,1.55187 -1.538089,-0.0118 -1.481863,-0.51938 -0.794617,-0.82781 -1.079006,0.13356 -0.422698,1.81267 -3.161858,0.56565 -3.243978,0.40298 -0.569783,-0.0564 -0.525498,-0.19797 -5.160306,-10.2903 6.728458,-0.99505 -0.993222,-6.32692 -5.926811,0.37917 -2.555892,-3.11195 3.203154,-1.27733 4.592506,-0.8679 5.079735,-6.88683 3.095243,2.51604 1.695935,1.22232 11.84612,1.35871 5.39494,-0.75027 3.949,0.20122 0.0915,2.92012 m -13.8483,23.64386 1.08092,-1.59776 0.62083,0.0883 0.27676,0.35036 0.70543,-0.96659 2.15737,-0.51902 0.82772,-0.32323 0.91685,-0.11613 -0.42231,0.80295 -1.26553,0.48936 -1.75999,0.64569 -1.01939,1.00268 -0.75635,-0.16105 -1.36191,0.30448 z"
+         style="fill:#00539f;fill-opacity:1;stroke:#ffffff;stroke-width:0.55931795"
+         inkscape:connector-curvature="0" />
+      <path
+         id="Tolland, CT"
+         class="c09013"
+         d="m 100.41898,581.44433 0.27137,4.71298 -5.502898,0.0786 -1.218425,0.0868 0.128121,8.34267 2.7209,0.006 0.910129,5.4496 -2.042064,-0.42423 -0.0023,1.74202 -3.478797,0.0472 0.8345,1.39524 -5.079769,6.88688 -4.592506,0.86785 0.09382,-1.57735 -0.08911,-0.40005 -1.263821,-2.51499 -1.039057,-0.71634 -2.046468,-9.18678 -1.746814,0.25412 0.395494,-3.35989 -1.10019,-0.0148 -0.102902,-5.76371 1.744124,-0.0484 -1.072785,-5.8963 21.355071,-0.0295 1.923017,0.0633"
+         style="fill:#00539f;fill-opacity:1;stroke:#ffffff;stroke-width:0.55931795"
+         inkscape:connector-curvature="0" />
+      <path
+         id="Windham, CT"
+         class="c09015"
+         d="m 117.78338,582.50802 1.06555,19.1813 0.17285,5.7391 -3.94898,-0.20123 -5.39493,0.75027 -11.846154,-1.35871 -1.695869,-1.22228 -3.095275,-2.51608 -0.834501,-1.3952 3.478798,-0.0472 0.0025,-1.74204 2.042098,0.4242 -0.910196,-5.4496 -2.720835,-0.006 -0.127784,-8.34267 1.218391,-0.0871 5.502907,-0.0783 -0.27137,-4.71298 2.43012,0.0558 14.82616,-0.0266 0.10794,1.0354"
+         style="fill:#00539f;fill-opacity:1;stroke:#ffffff;stroke-width:0.55931795"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
+  <path
+     style="fill:#283681;fill-opacity:1;stroke-width:1.06666672"
+     d=""
+     id="path6626"
+     inkscape:connector-curvature="0" />
+</svg>

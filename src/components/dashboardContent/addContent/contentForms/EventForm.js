@@ -15,13 +15,7 @@ const EventForm = ({ govId, setMadeChange, setPopupOpen }) => {
 
     };
 
-    const handleDropDown = (event, data) => {
-        const stateToChange = { ...eventInputs };
-        stateToChange[data.id] = data.value;
-        setEventInputs(stateToChange);
-    }
-
-    async function submitOfficial() {
+    async function submitEvent() {
         await dbAPI.createNewObjectByClassName('Events', eventInputs)
             .then(()=>{
                 setPopupOpen(false)
@@ -31,7 +25,7 @@ const EventForm = ({ govId, setMadeChange, setPopupOpen }) => {
 
     return (
         <>
-            <Header>Add Committee</Header>
+            <Header>Add Event</Header>
                 <Input
                     id='title'
                     placeholder='Title'
@@ -53,7 +47,7 @@ const EventForm = ({ govId, setMadeChange, setPopupOpen }) => {
                     placeholder='Notes'
                     onChange={handleFieldChange}
                 />
-                <Button onClick={submitOfficial}>Create</Button>
+                <Button onClick={submitEvent}>Create</Button>
         </>
 
     );
