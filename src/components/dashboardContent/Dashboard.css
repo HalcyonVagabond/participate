@@ -176,3 +176,50 @@
 .serviceCard{
     background-color: lightyellow !important;
 }
+
+/* ******************************************* */
+/* ************Edit Content******************* */
+
+.editContentModalContainer{
+    height: 60% !important;
+    top: 15% !important;
+    left: 25% !important;
+    background-color: var(--primaryDark) !important;
+
+}
+
+.editContentModal.content{
+    display: flex !important;
+    flex-direction: column !important;
+    background-color: var(--primaryDark) !important;
+}
+.editContentModal .input{
+    width: 80% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+.editContentModal .selection{
+    width: 80% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+.editContentModal .button{
+    width: 30% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 15px !important;
+}
+.editContentModal .button:hover{
+    color: white;
+    background-color: lightgreen !important;
+}
+.editFormHeader {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 8px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    border-radius: 2px;
+    background-color: var(--primaryLight) !important;
+    color: white !important;
+}

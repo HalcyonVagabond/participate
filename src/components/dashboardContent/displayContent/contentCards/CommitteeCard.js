@@ -1,6 +1,7 @@
 import React from "react"
 import { Card, Icon, Image, Popup, Button } from "semantic-ui-react"
 import dbAPI from "../../../../modules/dbAPI"
+import EditCommittee from "../../editContent/EditCommittee"
 
 const CommitteeCard = ({ committeeObj, setMadeChange }) => {
     const name = committeeObj.attributes.name
@@ -43,6 +44,7 @@ const CommitteeCard = ({ committeeObj, setMadeChange }) => {
                     Address: {address} 
                     </p>
                 </Popup>
+                <EditCommittee committeeObj={committeeObj} setMadeChange={setMadeChange} />
                 <a onClick={deleteCard}>
                     <Icon name='trash alternate'/>
                     Delete

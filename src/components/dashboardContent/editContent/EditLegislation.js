@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react"
-import { Header, Button, Input, Dropdown, TextArea } from 'semantic-ui-react'
-// import SemanticDatePicker from 'react-semantic-ui-datepickers'
-
-import dbAPI from "../../../../modules/dbAPI"
+import { Header, Button, Input, TextArea, Modal, Dropdown } from 'semantic-ui-react'
 import { Label } from "reactstrap";
 
-const LegislationForm = ({ govId, setMadeChange, setPopupOpen }) => {
+
+import dbAPI from "../../../modules/dbAPI"
+
+const EditLegislation = ({ legislationObj, setMadeChange }) => {
 
     const activeUserId = sessionStorage.getItem('userId')
-    const [legislationInputs, setLegislationInputs] = useState({ "title": "", "description": "", "isPassed": false, "governmentId": govId, "userId": activeUserId })
+    const [legislationInputs, setLegislationInputs] = useState(legislationObj.attributes)
+    const [ isModalOpen, setIsModalOpen ] = useState(false)
 
     const handleFieldChange = (evt) => {
         const stateToChange = { ...legislationInputs };
@@ -22,6 +23,15 @@ const LegislationForm = ({ govId, setMadeChange, setPopupOpen }) => {
         setLegislationInputs(stateToChange);
     }
 
+
+    async function saveEditedLegislation() {
+        await dbAPI.saveEditedObjectByClassNameAndObjId('Legislation', legislationObj.id, legislationInputs)
+            .then(()=>{
+                setIsModalOpen(false)
+                setMadeChange(true)
+            })
+    }
+
     const voteConditional = () => {
         if (legislationInputs.votedOn === true) {
             return (
@@ -32,16 +42,17 @@ const LegislationForm = ({ govId, setMadeChange, setPopupOpen }) => {
                     selection
                     options={[{value: true, text: 'Yes'}, {value: false, text: 'No'}]}
                     onChange={handleDropDown}
+                    value={legislationInputs.isPassed}
                 />
                 <Label for='voteDate'>VoteDate</Label>
-                <Input id='voteDate' type='date' onChange={handleDropDown}/>
+                <Input id='voteDate' type='date' onChange={handleDropDown} value={legislationInputs.voteDate}/>
                 </>
             )
         } else if (legislationInputs.votedOn === false) {
             return (
                 <>
                     <Label for='voteDate'>VoteDate</Label>
-                    <Input id='voteDate' type='date' onChange={handleDropDown}/>
+                    <Input id='voteDate' type='date' onChange={handleDropDown} value={legislationInputs.voteDate}/>
                 </>
             )
         } else {
@@ -49,32 +60,36 @@ const LegislationForm = ({ govId, setMadeChange, setPopupOpen }) => {
         }
     }
 
-    async function submitOfficial() {
-        await dbAPI.createNewObjectByClassName('Legislation', legislationInputs)
-            .then(()=>{
-                console.log(legislationInputs)
-                setPopupOpen(false)
-                setMadeChange(true)
-            })
-    }
 
     return (
-        <>
-            <Header>Add Legislation</Header>
+        <Modal
+        className='editContentModalContainer'
+        trigger={<Button onClick={()=>setIsModalOpen(true)}>Edit</Button>}
+        open={isModalOpen}
+        onClose={()=>{setIsModalOpen(false)}}
+        // centered={true}
+        size='small'
+        closeIcon
+        >
+            <Modal.Content className="editContentModal">
+            <Header className='editFormHeader' >Edit Legislation</Header>
                 <Input
                     id='title'
                     placeholder='Title'
                     onChange={handleFieldChange}
+                    value={legislationInputs.title}
                 />
                 <TextArea 
                     id='description'
                     placeholder='Description'
                     onChange={handleFieldChange}
+                    value={legislationInputs.description}
                 />
                 <Input
                     id='branch'
                     placeholder='Branch'
                     onChange={handleFieldChange}
+                    value={legislationInputs.branch}
                 />
                 <Dropdown
                     id='votedOn'
@@ -82,17 +97,20 @@ const LegislationForm = ({ govId, setMadeChange, setPopupOpen }) => {
                     selection
                     options={[{value: true, text: 'Yes'}, {value: false, text: 'No'}]}
                     onChange={handleDropDown}
+                    value={legislationInputs.votedOn}
                 />
                 {voteConditional()}
                 <Input
                     id='contactInfo'
                     placeholder='Contact Info'
                     onChange={handleFieldChange}
+                    value={legislationInputs.contactInfo}
                 />
-                <Button onClick={submitOfficial}>Create</Button>
-        </>
+                <Button onClick={saveEditedLegislation}>Save</Button>
+                </Modal.Content>
+        </Modal>
 
     );
 };
 
-export default LegislationForm;
+export default EditLegislation;

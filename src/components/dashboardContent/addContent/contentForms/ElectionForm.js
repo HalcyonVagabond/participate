@@ -21,7 +21,7 @@ const ElectionForm = ({ govId, setMadeChange, setPopupOpen }) => {
         setElectionsInputs(stateToChange);
     }
 
-    async function submitOfficial() {
+    async function submitElection() {
         await dbAPI.createNewObjectByClassName('Elections', electionInputs)
             .then(()=>{
                 setPopupOpen(false)
@@ -48,7 +48,7 @@ const ElectionForm = ({ govId, setMadeChange, setPopupOpen }) => {
                     placeholder='Voting Location'
                     onChange={handleFieldChange}
                 /> 
-                <Button onClick={submitOfficial}>Create</Button>
+                <Button onClick={submitElection}>Create</Button>
         </>
 
     );

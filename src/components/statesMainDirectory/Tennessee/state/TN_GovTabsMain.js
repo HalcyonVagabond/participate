@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
 import "../../../GovernmentPage.css"
+import TN_GovOverview from "./individualTabs/overview/TN_GovOverview"
+import TN_GovOfficialsTab from "./individualTabs/officials/TN_GovOfficialsTab"
 
 const TN_GovernmentTabs = (props) => {
   const [activeTab, setActiveTab] = useState('1');
@@ -26,7 +28,7 @@ const TN_GovernmentTabs = (props) => {
             className={classnames({ active: activeTab === '2' })}
             onClick={() => { toggle('2'); }}
           >
-            Elected Officials
+            Officials
           </NavLink>
         </NavItem>
         <NavItem>
@@ -51,33 +53,12 @@ const TN_GovernmentTabs = (props) => {
           <Row>
             <Col sm="12">
               <h4>Tennessee Government</h4>
+              <TN_GovOverview />
             </Col>
           </Row>
         </TabPane>
         <TabPane tabId="2">
-          <Row>
-            <Col sm="6">
-              <Card body>
-                <CardTitle>Executive Branch</CardTitle>
-                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                <Button>Go somewhere</Button>
-              </Card>
-            </Col>
-            <Col sm="6">
-              <Card body>
-                <CardTitle>Legislative Branch</CardTitle>
-                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                <Button>Go somewhere</Button>
-              </Card>
-            </Col>
-            <Col sm="6">
-              <Card body>
-                <CardTitle>Judicial Brach</CardTitle>
-                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                <Button>Go somewhere</Button>
-              </Card>
-            </Col>
-          </Row>
+          <TN_GovOfficialsTab />
         </TabPane>
         <TabPane tabId="3">
           <Row>

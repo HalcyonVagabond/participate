@@ -1,6 +1,7 @@
 import React from "react"
 import { Card, Icon, Image, Popup, Button } from "semantic-ui-react"
 import dbAPI from "../../../../modules/dbAPI"
+import EditService from "../../editContent/EditServices"
 
 const ServicesCard = ({ serviceObj, setMadeChange }) => {
     const name = serviceObj.attributes.name
@@ -43,6 +44,7 @@ const ServicesCard = ({ serviceObj, setMadeChange }) => {
                     Description: {notes}
                     </p>
                 </Popup>
+                <EditService serviceObj={serviceObj} setMadeChange={setMadeChange} />
                 <a onClick={deleteCard}>
                     <Icon name='trash alternate'/>
                     Delete
