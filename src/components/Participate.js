@@ -38,7 +38,7 @@ const Participate = (props) => {
         <BodyRouter govLevel={govLevel} changeGovLevel={changeGovLevel}/>
       </div>
       <div style={{position:'relative'}}>
-      <Footer govLevel={govLevel} changeGovLevel={changeGovLevel}/>
+        <Footer govLevel={govLevel} changeGovLevel={changeGovLevel}/>
       </div>
     </div>
     </>
