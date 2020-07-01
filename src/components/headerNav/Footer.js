@@ -23,7 +23,7 @@ const Footer = (props) => {
 
   return (
     <div className="footerContainer" id="mainFooter">
-      <Alert color="danger" style={{marginBottom: '0 !important'}}>
+      <Alert color="warning" style={{marginBottom: '0 !important'}}>
         This is a demo of work in progress. Click on Tennessee and search for State Level to see the most content.
       </Alert>
       <Navbar className="footer" light expand="md">

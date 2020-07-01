@@ -2,7 +2,7 @@
 
 
 .navContainer {
-    background-color: var(--nav);
+    background-color: var(--primaryLight);
 }
 
 #logo {
@@ -22,14 +22,14 @@
     justify-content: space-between !important;
 }
 .navLink{
-    color: aliceblue !important;
+    color: rgb(255, 255, 255) !important;
     transition: 0.5s ease;
     border-radius: 4px;
 
 }
 .navLink:hover{
     color: var(--accent1) !important;
-    background-color: var(--accent2) !important;
+    background-color: var(--primaryDark) !important;
     padding-left: 10px;
     padding-right: 10px;
     transition: 0.5s ease;
