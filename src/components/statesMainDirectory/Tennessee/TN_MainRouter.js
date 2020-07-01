@@ -16,7 +16,6 @@ const TN_MainRouter = ({ govLevel, changeGovLevel }) => {
                     render={routerProps => {
                         return (
                             <>
-                                <h1 className="stateBanner">Tennessee</h1>
                                 <TN_Home {...routerProps} govLevel={govLevel} changeGovLevel={changeGovLevel} />
                             </>
                         )

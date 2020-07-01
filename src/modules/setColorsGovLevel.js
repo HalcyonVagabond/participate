@@ -23,7 +23,7 @@ const setColorsGovLevel = (govLevel) => {
         document.documentElement.style
             .setProperty('--primaryDark', '#c77700');
         document.documentElement.style
-            .setProperty('--primaryLight', '#dccc7b');
+            .setProperty('--primaryLight', '#ddc964');
     } else if (govLevel === 'state') {
         document.documentElement.style
             .setProperty('--primaryDark', '#58a50b');

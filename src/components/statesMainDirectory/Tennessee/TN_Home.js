@@ -33,7 +33,7 @@ const TN_Home = ({location, history, govLevel, changeGovLevel}) => {
     if (location.pathname === '/tennessee') {
       return (
         <>
-          <Button className={`mapToggleButton ${toggleGovButtonColor()}`}  onClick={toggleGov} style={{ marginBottom: '1rem' }}>Toggle Tennessee Government</Button>
+          <Button id='govTabsButton' className={`mapToggleButton ${toggleGovButtonColor()}`}  onClick={toggleGov} style={{ marginBottom: '1rem' }}>Toggle Tennessee Government</Button>
           <Collapse isOpen={isGovOpen}>
               <TN_GovTabsMain />
           </Collapse>
@@ -63,7 +63,7 @@ const TN_Home = ({location, history, govLevel, changeGovLevel}) => {
 
   return (
     <>
-      <Button className={`mapToggleButton ${toggleMapButtonColor()}`}  onClick={toggleMap} style={{ marginBottom: '1rem' }}>Toggle State Map</Button>
+      <Button id='toggleMapButton' className={`mapToggleButton ${toggleMapButtonColor()}`}  onClick={toggleMap} style={{ marginBottom: '1rem' }}>Toggle State Map</Button>
       <Collapse isOpen={isMapOpen}>
           <TN_FullMap govLevel={govLevel} changeGovLevel={changeGovLevel} routeToSelectedArea={routeToSelectedArea} />
       </Collapse>

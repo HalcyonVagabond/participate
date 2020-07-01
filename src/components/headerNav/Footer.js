@@ -11,7 +11,8 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  NavbarText
+  NavbarText,
+  Alert
 } from 'reactstrap';
 import "./Footer.css"
 
@@ -22,6 +23,9 @@ const Footer = (props) => {
 
   return (
     <div className="footerContainer" id="mainFooter">
+      <Alert color="warning" style={{marginBottom: '0 !important'}}>
+        This is a demo of work in progress. Click on Tennessee and search for State Level to see the most content.
+      </Alert>
       <Navbar className="footer" light expand="md">
         <NavbarBrand href="/">participate</NavbarBrand>
         <NavbarToggler onClick={toggle} />
@@ -33,7 +37,7 @@ const Footer = (props) => {
             <NavItem>
               <NavLink target="_blank" href="https://github.com/HalcyonVagabond/participate">Contact</NavLink>
             </NavItem>
-            <UncontrolledDropdown direction="up" nav inNavbar>
+            {/* <UncontrolledDropdown direction="up" nav inNavbar>
               <DropdownToggle nav caret>
                 Donate
               </DropdownToggle>
@@ -49,7 +53,7 @@ const Footer = (props) => {
                   Ways to Donate
                 </DropdownItem>
               </DropdownMenu>
-            </UncontrolledDropdown>
+            </UncontrolledDropdown> */}
           </Nav>
           <NavbarText>😊</NavbarText>
         </Collapse>

@@ -23,7 +23,6 @@ const US_FullMap = (props) => {
     }
 
     useEffect(()=>{
-        console.log(props.routerProps)
         if(stateSelected !== '') {
             props.routerProps.history.push(`/${stateSelected}`,props.govLevel)
         }

@@ -1,5 +1,5 @@
 import React from "react"
-import { Router, Route, Switch } from "react-router-dom"
+import { Router, Route, Switch, Redirect } from "react-router-dom"
 import HomePage from "./home/HomePage"
 import DashboardPageMain from "./dashboardContent/DashboardPageMain"
 import AL_MainRouter from "./statesMainDirectory/alabama/AL_MainRouter"
@@ -7,6 +7,8 @@ import TN_MainRouter from "./statesMainDirectory/tennessee/TN_MainRouter"
 import InProgressMessage from "./rerouteMessages/InProgressMessage"
 
 const BodyRouter = ({props, govLevel, changeGovLevel}) => {
+
+    const user = sessionStorage.getItem('userId')
 
     return (
       <>
@@ -18,9 +20,7 @@ const BodyRouter = ({props, govLevel, changeGovLevel}) => {
                 }}
                 />
                 <Route exact path="/dashboard" render={props => {
-                    return (
-                        <DashboardPageMain {...props}/>
-                    );
+                    return user ? <DashboardPageMain {...props}/> : <Redirect exact to='/' />
                 }}
                 />
                  <Route

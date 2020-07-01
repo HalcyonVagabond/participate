@@ -31,15 +31,14 @@ const Participate = (props) => {
 
   return (
     <>
-    <div id="mainContainer" >
+    <div id="mainContainer" style={{position: 'relative'}}>
       <NavBar isLoggedIn={isLoggedIn} changeIsLoggedIn={changeIsLoggedIn} govLevel={govLevel} changeGovLevel={changeGovLevel}/>
       <DashboardSidebarMain isLoggedIn={isLoggedIn} govLevel={govLevel} changeGovLevel={changeGovLevel}/>
       <div id="bodyWrapper">
         <BodyRouter govLevel={govLevel} changeGovLevel={changeGovLevel}/>
       </div>
-      <div style={{position:'relative'}}>
-      <Footer govLevel={govLevel} changeGovLevel={changeGovLevel}/>
-      </div>
+     
+        <Footer govLevel={govLevel} changeGovLevel={changeGovLevel}/>
     </div>
     </>
   );

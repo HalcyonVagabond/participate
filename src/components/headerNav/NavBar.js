@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {useHistory} from 'react-router-dom'
 import "./NavBar.css"
 import {
   Collapse,
@@ -15,7 +16,7 @@ import {
   NavbarText,
   Button
 } from 'reactstrap';
-import { Popup, Icon } from "semantic-ui-react"
+import { Loader } from "semantic-ui-react"
 import LoginFormModal from "./login/LoginFormModal"
 import ProfileIconMenu from "./myProfile/ProfileIconMenu"
 import PrivacyToggle from "./privacyToggle/PrivacyToggle"
@@ -30,34 +31,39 @@ const NavBar = (props) => {
 
   const toggle = () => setIsOpen(!isOpen);
 
+  function handleLogout(){
+      sessionStorage.clear()
+      props.changeIsLoggedIn(false)
+      // window.location='/'
+  }
+
   const checkIfLoggedIn = () => {
     if (sessionStorage.getItem('userId') === null && privacyMode === false) {
-      console.log(Parse.User.current())
       return (
+        <div>
         <NavItem>
           <LoginFormModal props={props} changeIsLoggedIn={props.changeIsLoggedIn} />
         </NavItem>
+        </div>
       );
-    } else if (privacyMode === false) {
+    } else if(props.isLoggedIn && !sessionStorage.getItem('userId')){
       return (
-        <>
+        <NavItem>
+          <Loader inverted>Loading</Loader>
+        </NavItem>
+      )
+    } else if(privacyMode === false) {
+      return (
           <NavItem>
-            <NavLink className="navLink" href="/dashboard"><Button color='primary'>Dashboard</Button></NavLink>
+            <Button color='primary' onClick={handleLogout}>Logout</Button>
           </NavItem>
-          <NavItem>
-            <Button color='primary' onClick={() => {
-              sessionStorage.clear()
-              props.changeIsLoggedIn(false)
-            }}>Logout</Button>
-          </NavItem>
-        </>
       )
     }
   }
 
   useEffect(() => {
     checkIfLoggedIn()
-  }, [props.isLoggedIn])
+  }, [sessionStorage])
 
   return (
     <Navbar className="navContainer" light expand="md">
@@ -84,13 +90,13 @@ const NavBar = (props) => {
             on='click'
             position='bottom center'
           > */}
-          {checkIfLoggedIn()}
         
-            <PrivacyToggle privacyMode={privacyMode} changePrivacyMode={changePrivacyMode} />
+            {/* <PrivacyToggle privacyMode={privacyMode} changePrivacyMode={changePrivacyMode} /> */}
       
         {/* </Popup> */}
         </Nav>
       </Collapse>
+      {checkIfLoggedIn()}
     </Navbar>
   );
 }
