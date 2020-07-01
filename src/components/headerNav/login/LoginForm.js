@@ -39,7 +39,7 @@ const LoginForm = ({toggle, changeIsLoggedIn}) => {
                 </FormGroup>
                 <FormGroup>
                   {/* <Label for="favoriteColor">Favorite Color</Label> */}
-                  <Input onChange={handleFieldChange} type="password" id="password-login" placeholder="favorite color" />
+                  <Input onChange={handleFieldChange} type="password" id="password-login" placeholder="password" />
                 </FormGroup>
               </Form>
             </ModalBody>

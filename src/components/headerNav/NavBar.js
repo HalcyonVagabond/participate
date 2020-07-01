@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {useHistory} from 'react-router-dom'
 import "./NavBar.css"
 import {
   Collapse,
@@ -30,6 +31,12 @@ const NavBar = (props) => {
 
   const toggle = () => setIsOpen(!isOpen);
 
+  function handleLogout(){
+      sessionStorage.clear()
+      props.changeIsLoggedIn(false)
+      // window.location='/'
+  }
+
   const checkIfLoggedIn = () => {
     if (sessionStorage.getItem('userId') === null && privacyMode === false) {
       return (
@@ -48,10 +55,7 @@ const NavBar = (props) => {
     } else if(privacyMode === false) {
       return (
           <NavItem>
-            <Button color='primary' onClick={() => {
-              sessionStorage.clear()
-              props.changeIsLoggedIn(false)
-            }}>Logout</Button>
+            <Button color='primary' onClick={handleLogout}>Logout</Button>
           </NavItem>
       )
     }
@@ -59,7 +63,7 @@ const NavBar = (props) => {
 
   useEffect(() => {
     checkIfLoggedIn()
-  }, [props.isLoggedIn])
+  }, [sessionStorage])
 
   return (
     <Navbar className="navContainer" light expand="md">
