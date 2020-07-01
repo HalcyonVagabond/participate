@@ -1,12 +1,13 @@
 
 :root {
 
-    --bodyBackground: #2c2c2d;
-
+    --bodyBackground: #f9f9f9;
+    /* --bodyBackground: #2c2c2d; */
+    --nav: #b3b3b3;
     --primaryDark: rgb(105, 53, 184);
     --primaryLight: #ac7be0;
-    --accent1: rgba(57, 182, 255, 1);
-    --accent2: rgba(1, 167, 194, 1);
+    --accent1: rgb(229, 232, 233);
+    --accent2: rgb(82, 82, 82);
 
     /* ******* Gov Level Colors ********** */
 
@@ -67,6 +68,11 @@ body{
     padding: 10px;
 }
 
+#mainContainer{
+    position: relative;
+    height: 87vh;
+    width: 100vw;
+}
 
 #bodyWrapper {
     /* position: relative; */
@@ -87,9 +93,10 @@ body{
     .mapContainer{
         max-width: 850px !important;
     }
+
 }
 
-@media (min-width: 1300px) {
+/* @media (min-width: 1300px) {
     .mapContainer{
         margin-top: 0px !important;
     }
@@ -101,7 +108,7 @@ body{
     }
 
     #bodyWrapper {
-        /* position: relative; */
+        position: relative;
         min-height: 93vh !important;
         margin-top: 2vh !important;
         margin-left: 375px;
@@ -137,8 +144,12 @@ body{
     .footerLinks {
         margin-left: 40% !important;
     }
+    .footerContainer {
+        margin-top: 0px !important;
+    }
+    
 
-}
+} */
 
 @media (max-width: 384px){
 

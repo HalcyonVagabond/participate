@@ -33,6 +33,7 @@ const LoginFormModal = (props) => {
             <NavLink
               className={classnames({ active: activeTab === '1' })}
               onClick={() => { toggleTab('1'); }}
+              style={{cursor: 'pointer'}}
             >
               Login
           </NavLink>
@@ -41,6 +42,7 @@ const LoginFormModal = (props) => {
             <NavLink
               className={classnames({ active: activeTab === '2' })}
               onClick={() => { toggleTab('2'); }}
+              style={{cursor: 'pointer'}}
             >
               Sign Up
           </NavLink>
