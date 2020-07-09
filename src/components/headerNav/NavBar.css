@@ -4,11 +4,14 @@
 .navContainer {
     background-color: var(--primaryLight);
 }
+.navContainer.navbar{
+    padding: 0 !important;
+}
 
 #logo {
     height: 100%;
-    width: 280px;
-    margin-bottom: 8px;
+    width: 150px;
+    margin-left: 30px;
 }
 
 .navDropDownContainer {
@@ -51,4 +54,8 @@
 }
 .navContainer{
     list-style: none !important;
+}
+.loadingNavbar{
+    display: flex !important;
+    left: 95% !important;
 }

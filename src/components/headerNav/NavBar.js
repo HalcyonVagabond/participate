@@ -9,11 +9,7 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
   DropdownItem,
-  NavbarText,
   Button
 } from 'reactstrap';
 import { Loader } from "semantic-ui-react"
@@ -24,8 +20,6 @@ import dbAPI from "../../modules/dbAPI"
 
 const NavBar = (props) => {
 
-  const Parse = require('parse/node');
-
   const [isOpen, setIsOpen] = useState(false);
   const [privacyMode, changePrivacyMode] = useState(false)
 
@@ -34,11 +28,11 @@ const NavBar = (props) => {
   function handleLogout(){
       sessionStorage.clear()
       props.changeIsLoggedIn(false)
-      // window.location='/'
+      window.location='/'
   }
 
   const checkIfLoggedIn = () => {
-    if (sessionStorage.getItem('userId') === null && privacyMode === false) {
+    if (sessionStorage.getItem('userId') === null && privacyMode === false && props.isLoggedIn === false) {
       return (
         <div>
         <NavItem>
@@ -46,10 +40,10 @@ const NavBar = (props) => {
         </NavItem>
         </div>
       );
-    } else if(props.isLoggedIn && !sessionStorage.getItem('userId')){
+    } else if(props.isLoggedIn===true && !sessionStorage.getItem('userId')){
       return (
         <NavItem>
-          <Loader inverted>Loading</Loader>
+          <Loader className='loadingNavbar' inverted>Loading</Loader>
         </NavItem>
       )
     } else if(privacyMode === false) {
@@ -63,11 +57,11 @@ const NavBar = (props) => {
 
   useEffect(() => {
     checkIfLoggedIn()
-  }, [sessionStorage])
+  }, [sessionStorage, props.isLoggedIn])
 
   return (
     <Navbar className="navContainer" light expand="md">
-      <NavbarBrand href="/"><img id="logo" src={require(`../../images/participateLogo1.png`)} /></NavbarBrand>
+      <NavbarBrand href="/"><img id="logo" src={require(`../../images/participateLogo.png`)} /></NavbarBrand>
       <NavbarToggler onClick={toggle} />
       <Collapse className="navDropDownContainer" isOpen={isOpen} navbar>
         <Nav className="mr-auto navLinksContainer" navbar>

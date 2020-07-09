@@ -26,14 +26,12 @@ const SignUpForm = ({toggle, changeIsLoggedIn}) => {
     const handleSignUp = (e) => {
         e.preventDefault();
         toggle()
-        // sessionStorage.clear()
-        // sessionStorage.setItem(
-        //   'user',
-        //   JSON.stringify(credentials)
-        // );
-        dbAPI.createNewUser(credentials);
-        changeIsLoggedIn(true)
-        // props.history.push('/')
+        dbAPI.createNewUser(credentials).then((resp)=>{
+          console.log(resp)
+          if (resp!==undefined){
+            changeIsLoggedIn(true)
+          }
+        });
       };
 
     return (
