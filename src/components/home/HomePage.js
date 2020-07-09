@@ -21,7 +21,6 @@ const HomePage = (props) => {
         <>
             {welcomeMessageConditional()}
             <div className="mapContainer">
-                <h1 className="mapHeader">Search Governments</h1>
                 <US_FullMap routerProps={props.routerProps} govLevel={props.govLevel} changeGovLevel={props.changeGovLevel}/>
             </div>
         </>

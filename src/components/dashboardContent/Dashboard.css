@@ -113,7 +113,7 @@
     transition: 0.5s ease;
 }
 .addContentIcon {
-    color: white;
+    color: blue;
     margin-left: 10px !important;
     cursor: pointer;
     border-radius: 5px;

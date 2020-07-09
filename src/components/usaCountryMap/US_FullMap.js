@@ -31,8 +31,9 @@ const US_FullMap = (props) => {
     return (
         <section className="fullMapContainer">
             <div className="mapContainer jumbo">
-                    <US_MapToolbar selectLevel={selectLevel} chooseStateSelect={chooseStateSelect}/>
-                    <US_CountryMapCard selectState={selectState}/>
+                <h2 className="mapHeader">Search Governments</h2>
+                <US_MapToolbar selectLevel={selectLevel} chooseStateSelect={chooseStateSelect}/>
+                <US_CountryMapCard selectState={selectState}/>
             </div>
         </section>
     )
