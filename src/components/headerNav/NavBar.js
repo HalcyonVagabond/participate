@@ -10,25 +10,33 @@ import {
   NavItem,
   NavLink,
   DropdownItem,
-  Button
+  Button,
+  Modal,
+  ModalHeader,
+  ModalFooter
 } from 'reactstrap';
 import { Loader } from "semantic-ui-react"
 import LoginFormModal from "./login/LoginFormModal"
-import ProfileIconMenu from "./myProfile/ProfileIconMenu"
 import PrivacyToggle from "./privacyToggle/PrivacyToggle"
 import dbAPI from "../../modules/dbAPI"
 
 const NavBar = (props) => {
 
-  const [isOpen, setIsOpen] = useState(false);
-  const [privacyMode, changePrivacyMode] = useState(false)
-
-  const toggle = () => setIsOpen(!isOpen);
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [privacyMode, changePrivacyMode] = useState(false);
+  const history = useHistory();
+  const toggleNav = () => setIsNavOpen(!isNavOpen);
+  const [modalLogout, setModalLogout] = useState(false);
+  const toggleLogout = () => {
+    setModalLogout(!modalLogout)
+  };
 
   function handleLogout(){
-      sessionStorage.clear()
-      props.changeIsLoggedIn(false)
-      window.location='/'
+      sessionStorage.clear();
+      sessionStorage.setItem('anonymousUser',true);
+      setModalLogout(false)
+      props.changeIsLoggedIn(false);
+      history.push('/');
   }
 
   const checkIfLoggedIn = () => {
@@ -40,7 +48,7 @@ const NavBar = (props) => {
         </NavItem>
         </div>
       );
-    } else if(props.isLoggedIn===true && !sessionStorage.getItem('userId')){
+    } else if(props.isLoggedIn==="" && !sessionStorage.getItem('userId')){
       return (
         <NavItem>
           <Loader className='loadingNavbar' inverted>Loading</Loader>
@@ -49,8 +57,15 @@ const NavBar = (props) => {
     } else if(privacyMode === false) {
       return (
           <NavItem>
-            <Button color='primary' onClick={handleLogout}>Logout</Button>
-          </NavItem>
+          <Button className='navButton' onClick={toggleLogout}>Logout</Button>
+          <Modal className='logoutModal' isOpen={modalLogout} toggle={toggleLogout}>
+            <ModalHeader toggle={toggleLogout}>Are you sure you want to log out?</ModalHeader>
+            <ModalFooter>
+              <Button color="danger" onClick={handleLogout}>Logout</Button>
+              <Button color="secondary" onClick={toggleLogout}>Cancel</Button>
+            </ModalFooter>
+          </Modal>
+        </NavItem>
       )
     }
   }
@@ -62,8 +77,8 @@ const NavBar = (props) => {
   return (
     <Navbar className="navContainer" light expand="md">
       <NavbarBrand href="/"><img id="logo" src={require(`../../images/participateLogo.png`)} /></NavbarBrand>
-      <NavbarToggler onClick={toggle} />
-      <Collapse className="navDropDownContainer" isOpen={isOpen} navbar>
+      <NavbarToggler onClick={toggleNav} />
+      <Collapse className="navDropDownContainer" isOpen={isNavOpen} navbar>
         <Nav className="mr-auto navLinksContainer" navbar>
           {/* <NavbarText>Government:  </NavbarText> */}
           <NavItem>

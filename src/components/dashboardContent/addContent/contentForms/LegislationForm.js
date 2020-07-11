@@ -52,7 +52,6 @@ const LegislationForm = ({ govId, setMadeChange, setPopupOpen }) => {
     async function submitOfficial() {
         await dbAPI.createNewObjectByClassName('Legislation', legislationInputs)
             .then(()=>{
-                console.log(legislationInputs)
                 setPopupOpen(false)
                 setMadeChange(true)
             })

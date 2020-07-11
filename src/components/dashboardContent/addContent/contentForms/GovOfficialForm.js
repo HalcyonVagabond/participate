@@ -23,7 +23,6 @@ const GovernmentOfficialForm = ({ govId, setMadeChange, setPopupOpen }) => {
 
     async function submitOfficial() {
         setPopupOpen(false)
-        console.log(officialInputs)
         await dbAPI.createNewObjectByClassName('GovernmentOfficials', officialInputs)
             .then(()=>{
                 setPopupOpen(false)

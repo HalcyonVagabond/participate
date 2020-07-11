@@ -22,12 +22,10 @@ const NoteForm = ({ govId, setMadeChange, setPopupOpen }) => {
         const stateToChange = { ...officialInputs };
         stateToChange[data.id] = data.value;
         setOfficialInputs(stateToChange);
-        console.log(data)
     }
 
     async function submitOfficial() {
         setPopupOpen(false)
-        console.log(officialInputs)
         await dbAPI.createNewObjectByClassName('GovernmentOfficials', officialInputs)
             .then(()=>{
                 setPopupOpen(false)

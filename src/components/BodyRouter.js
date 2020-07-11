@@ -1,14 +1,14 @@
 import React from "react"
-import { Router, Route, Switch, Redirect } from "react-router-dom"
+import { Route, Switch, Redirect } from "react-router-dom"
 import HomePage from "./home/HomePage"
 import DashboardPageMain from "./dashboardContent/DashboardPageMain"
 import AL_MainRouter from "./statesMainDirectory/alabama/AL_MainRouter"
 import TN_MainRouter from "./statesMainDirectory/tennessee/TN_MainRouter"
 import InProgressMessage from "./rerouteMessages/InProgressMessage"
 
-const BodyRouter = ({props, govLevel, changeGovLevel}) => {
+const BodyRouter = ({changeIsLoggedIn, govLevel, changeGovLevel}) => {
 
-    const user = sessionStorage.getItem('userId')
+    const user = sessionStorage.getItem('userId');
 
     return (
       <>

@@ -25,9 +25,9 @@
     justify-content: space-between !important;
 }
 .navLink{
-    color: rgb(255, 255, 255) !important;
+    color: rgb(52, 52, 52) !important;
     transition: 0.5s ease;
-    border-radius: 4px;
+    border-radius: 2px;
 
 }
 .navLink:hover{
@@ -37,11 +37,50 @@
     padding-right: 10px;
     transition: 0.5s ease;
 }
-
+.navButton{
+    background-color: var(--primaryDark) !important;
+    border-color: var(--primaryDark) !important;
+}
 .loginPopUp{
-    margin-top: 5% !important;
+    margin-top: 18vh !important;
+}
+.logoutModal{
+    margin-top: 35vh !important;
+    width: 265px !important;
+}
+.modal-dialog{
+    z-index: 9999 !important;
+    filter: none !important;
+}
+.modal-open #root{
+    z-index: 5 !important;
+    filter: blur(2.5px);
 }
 
+.loginPopUp.modal-content{
+    width: 100% !important;
+}
+
+.loginPopUp .modal-content .nav-tabs{
+    color: white;
+    background-color: var(--primaryDark) !important;
+    border-color: var(--primaryLight) !important;
+}
+.loginPopUp .modal-content .nav-tabs .active{
+    color: rgb(50, 50, 50);
+    background-color: var(--primaryLight) !important;
+    border-color: var(--primaryLight) !important;
+}
+.loginPopUp .modal-footer .btn{
+    background-color: var(--primaryDark) !important;
+    border-color: var(--primaryLight) !important;
+}
+.loginPopUp .modal-content .modal-header{
+    color: rgb(50, 50, 50) !important;
+    background-color: var(--primaryLight) !important;
+    border-color: var(--primaryLight);
+    border-radius: 0 !important;
+}
 .navContainer .ui.toggle.checkbox label:after{
     z-index: 1 !important;
 }
@@ -50,6 +89,7 @@
 }
 .navContainer button{
     margin: 25px;
+    margin-right: 7vw !important;
     text-decoration: none;
 }
 .navContainer{
@@ -57,5 +97,6 @@
 }
 .loadingNavbar{
     display: flex !important;
-    left: 95% !important;
+    left: 93vw !important;
+    
 }

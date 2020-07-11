@@ -3,7 +3,7 @@ import {  ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Input, Button } 
 import dbAPI from "../../../modules/dbAPI"
 
 
-const LoginForm = ({toggle, changeIsLoggedIn}) => {
+const LoginForm = ({toggleLoginModal, changeIsLoggedIn}) => {
 
     const [credentials, setCredentials] = useState({ });
 
@@ -15,24 +15,24 @@ const LoginForm = ({toggle, changeIsLoggedIn}) => {
     };
 
     async function handleLogin(e) {
-        e.preventDefault();
-        toggle()
+        toggleLoginModal()
+        changeIsLoggedIn("")
         await dbAPI.loginUser(credentials)
           .then((resp)=>{
-            console.log(resp)
             if (resp!==undefined){
-              console.log('HERE!!!')
+              changeIsLoggedIn(false)
               changeIsLoggedIn(true)
+            } else {
+              changeIsLoggedIn(false)
             }
           });
       };
 
-
     return (
         <>
-        <ModalHeader toggle={toggle}>Login to Participate</ModalHeader>
-            <ModalBody>
               <Form onSubmit={handleLogin}>
+        <ModalHeader toggle={toggleLoginModal}>Login to Participate</ModalHeader>
+            <ModalBody>
                 <FormGroup>
                   {/* <Label for="email">Email</Label> */}
                   <Input onChange={handleFieldChange} type="username" id="username-login" placeholder="username" />
@@ -41,11 +41,11 @@ const LoginForm = ({toggle, changeIsLoggedIn}) => {
                   {/* <Label for="favoriteColor">Favorite Color</Label> */}
                   <Input onChange={handleFieldChange} type="password" id="password-login" placeholder="password" />
                 </FormGroup>
-              </Form>
             </ModalBody>
             <ModalFooter>
               <Button color="primary" type="submit" onClick={handleLogin}>Login</Button>
             </ModalFooter>
+              </Form>
         </>
     );
 

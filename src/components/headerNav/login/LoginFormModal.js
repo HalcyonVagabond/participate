@@ -9,7 +9,7 @@ import SignUpForm from "./SignUpForm"
 
 const LoginFormModal = (props) => {
 
-  const [modal, setModal] = useState(false);
+  const [loginModal, setLoginModal] = useState(false);
 
   const [activeTab, setActiveTab] = useState('1');
 
@@ -17,17 +17,17 @@ const LoginFormModal = (props) => {
     if(activeTab !== tab) setActiveTab(tab);
   }
 
-  const toggle = () => setModal(!modal);
+  const toggleLoginModal = () => setLoginModal(!loginModal);
 
   const goHome = () => {
-    toggle()
+    toggleLoginModal()
   };
 
 
   return (
     <div>
-      <Button id="navLogin" color="primary" onClick={goHome}>Login</Button>
-      <Modal isOpen={modal} toggle={toggle} className="loginPopUp">
+      <Button className="navButton" onClick={goHome}>Login</Button>
+      <Modal isOpen={loginModal} toggle={toggleLoginModal} className="loginPopUp">
         <Nav tabs>
           <NavItem>
             <NavLink
@@ -50,10 +50,10 @@ const LoginFormModal = (props) => {
         </Nav>
         <TabContent activeTab={activeTab}>
           <TabPane tabId="1">
-            <LoginForm toggle={toggle} toggle={toggle} changeIsLoggedIn={props.changeIsLoggedIn} />
+            <LoginForm toggleLoginModal={toggleLoginModal} changeIsLoggedIn={props.changeIsLoggedIn} />
           </TabPane>
           <TabPane tabId="2">
-            <SignUpForm toggle={toggle} toggle={toggle} changeIsLoggedIn={props.changeIsLoggedIn}/>
+            <SignUpForm toggleLoginModal={toggleLoginModal} changeIsLoggedIn={props.changeIsLoggedIn}/>
           </TabPane>
         </TabContent>
       </Modal>
